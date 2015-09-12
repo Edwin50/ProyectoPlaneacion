@@ -1,0 +1,7 @@
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Datos\bin\Debug\Planeacion.Datos.dll
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Datos\bin\Debug\Planeacion.Datos.pdb
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Datos\bin\Debug\Planeacion.Entidades.dll
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Datos\bin\Debug\Planeacion.Entidades.pdb
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Datos\obj\Debug\Planeacion.Datos.csprojResolveAssemblyReference.cache
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Datos\obj\Debug\Planeacion.Datos.dll
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Datos\obj\Debug\Planeacion.Datos.pdb
