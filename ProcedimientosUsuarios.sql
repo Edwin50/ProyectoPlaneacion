@@ -2,38 +2,42 @@
 use HtBase;
 /*********
 
-drop procedure RUD_Usuarios
+drop procedure RUD_Empleado
 go
 drop procedure verificarContraseña
 go
-drop procedure verificarUsuario
+drop procedure verificarEmpleado
 go
-drop procedure seleccionarUsuarios
+drop procedure seleccionarEmpleado
 ***********/
 go
-create procedure RUD_Usuarios(
+create procedure RUD_Empleado(
 @Id int ,
-@Nombre nvarchar(20),
-@Apellido nvarchar(50),
-@Contraseña nvarchar(50),
-@tipoUsuario int,
+@Supervisor int,
+@Nombre nvarchar(50),
+@Estado bit,
+@Clave varchar(10),
+@tipoEmpleado int,
 @accion as int) 
  as
  begin
 
  if @accion = 1 -- insert
  begin
-    Insert into HtUsuario (Nombre,Apellido,Contraseña,tipoUsuario) values (@Nombre,@Apellido,@Contraseña,@tipoUsuario)
+    Insert into HtEmpleado( HtIdSupervisor, HtNombreEmpleado,HtIdTipoEmpleado,HtClave,HtEstado)
+	 values (@Supervisor,@Nombre,@tipoEmpleado,@Clave,@Estado)
   end
   else if @accion = 2 -- update
   begin 
-   update HtUsuario set 
-   Nombre= @Nombre,Apellido=@Apellido,Contraseña=@Contraseña,tipoUsuario= @tipoUsuario
-   where Id = @Id;
+   update HtEmpleado set 
+    HtNombreEmpleado= @Nombre, HtIdSupervisor=@Supervisor,
+	HtClave=@Clave,HtIdTipoEmpleado= @tipoEmpleado,
+	HtEstado=@Estado
+   where HtIdEmpleado = @Id;
   end
   else if @accion = 3 -- delete
   begin
-  delete from HtUsuario where Id = @Id;
+  delete from HtEmpleado where HtIdEmpleado = @Id;
   end
 
 
@@ -42,24 +46,24 @@ create procedure RUD_Usuarios(
 
  go
 
- create procedure verificarContraseña(@Contraseña nvarchar(50))
+ create procedure verificarContraseña(@Contraseña varchar(10))
  as 
  begin
-  select Id  from HtUsuario where Contraseña=@Contraseña;
+  select HtIdEmpleado  from HtEmpleado where HtClave=@Contraseña;
  end ;
  go
 
- Create procedure verificarUsuario(@Nombre nvarchar(20),@Contraseña nvarchar(50))
+ Create procedure verificarEmpleado(@Nombre nvarchar(50),@Contraseña varchar(10))
  as 
  begin
-  select u.Id,u.Nombre,u.Apellido from HtUsuario as u where u.Nombre=@Nombre and u.Contraseña=@Contraseña;
+  select u.HtIdEmpleado,u.HtNombreEmpleado from HtEmpleado as u where u.HtNombreEmpleado=@Nombre and u.HtClave=@Contraseña;
  end ;
  go
 
 
-
- create procedure seleccionarUsuarios
+create procedure seleccionarEmpleados
  as 
  begin 
- Select Id,Nombre,Apellido,Contraseña,tipoUsuario from HtUsuario
+ Select HtIdEmpleado,HtNombreEmpleado,HtIdSupervisor,
+ HtClave,HtEstado, HtIdTipoEmpleado from HtEmpleado
  end;

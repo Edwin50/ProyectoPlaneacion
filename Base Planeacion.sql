@@ -43,6 +43,9 @@ create table HtEmpleado(
   constraint fk_HtTipoEmpleado_HtEmpleado foreign key(HtIdTipoEmpleado) references HtTipoEmpleado(HtIdTipoEmpleado)
 );
 
+alter table HtEmpleado add unique(HtClave);
+
+
 create table HtResultado(
   HtIdResultadoEntrevista int identity primary key,
   HtDescriResultado varchar(50),

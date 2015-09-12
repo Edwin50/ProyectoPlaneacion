@@ -40,8 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionAD.cs" />
+    <Compile Include="HtEmpleadoAD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsuarioAD.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Planeacion.Entidades\Planeacion.Entidades.csproj">

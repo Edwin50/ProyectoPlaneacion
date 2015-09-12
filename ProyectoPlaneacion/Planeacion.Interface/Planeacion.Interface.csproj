@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\estilos.css" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -82,8 +83,24 @@
       <DependentUpon>PlaInicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Planeacion.Entidades\Planeacion.Entidades.csproj">
+      <Project>{606b8d56-ee93-4ce2-b062-e895424659a0}</Project>
+      <Name>Planeacion.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Planeacion.LogicaNegocio\Planeacion.LogicaNegocio.csproj">
+      <Project>{42a648d4-75e0-474c-8af6-6455e08cf330}</Project>
+      <Name>Planeacion.LogicaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

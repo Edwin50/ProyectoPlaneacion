@@ -6,28 +6,30 @@ using System.Threading.Tasks;
 using Planeacion.Entidades;
 using System.Data.SqlClient;
 using System.Data;
-
 namespace Planeacion.Datos
 {
-    public class UsuarioAD
+    public class HtEmpleadoAD
     {
 
-        #region "Acceso Datos Usuarios"
-        //Metodo quue se encarga de realizar el proceso de inseccion , eliminacion y actualizacion de la tabla de usuarios
-        public Int32 RUDUsuariosAD( HtUsuario user,int accion) {
-            
-            SqlCommand com = ConexionAD.GET_CONEXION().CreateCommand();
-            try {
+        #region "Acceso Datos Empleados"
+        //Metodo quue se encarga de realizar el proceso de inseccion , eliminacion y actualizacion de la tabla de Empleados
+        public Int32 RUDEmpleadosAD(HtEmpleado empleado, int accion)
+        {
 
-                com.CommandText = "RUD_Usuarios";
+            SqlCommand com = ConexionAD.GET_CONEXION().CreateCommand();
+            try
+            {
+
+                com.CommandText = "RUD_Empleado";
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.Clear();
-                com.Parameters.Add(new SqlParameter("@Id",user.Id ));
-                com.Parameters.Add(new SqlParameter("@Nombre", user.Nombre));
-                com.Parameters.Add(new SqlParameter("@Apellido", user.Apellido));
-               
-                com.Parameters.Add(new SqlParameter("@Contraseña", user.Contraseña));
-                com.Parameters.Add(new SqlParameter("@tipoUsuario", user.tipoUsuario));
+                // @Supervisor
+                com.Parameters.Add(new SqlParameter("@Id", empleado.HtIdEmpleado));
+                com.Parameters.Add(new SqlParameter("@Nombre", empleado.HtNombreEmpleado));
+                com.Parameters.Add(new SqlParameter("@Estado", empleado.HtEstado));
+                com.Parameters.Add(new SqlParameter("@Supervisor", empleado.HtIdSupervisor));
+                com.Parameters.Add(new SqlParameter("@Clave", empleado.HtClave));
+                com.Parameters.Add(new SqlParameter("@tipoEmpleado", empleado.HtIdTipoEmpleado));
                 com.Parameters.Add(new SqlParameter("@accion", accion));
                 com.Connection.Open();
                 // devuelve el numero de filas afectadas en el SQL
@@ -36,23 +38,25 @@ namespace Planeacion.Datos
             catch (Exception ex)
             {
                 accion = 0;
-            // esta excepcion solo es para pruebas
+                // esta excepcion solo es para pruebas
                 throw ex;
-               
+
             }
-            finally {
-                if (com.Connection.State == System.Data.ConnectionState.Open) {
+            finally
+            {
+                if (com.Connection.State == System.Data.ConnectionState.Open)
+                {
                     com.Connection.Close();
                 }
                 com.Dispose();
-            
+
             }
 
             return accion;
         }
 
         // retorna true si no existen coincidencias
-        public Boolean comprobarContraseñaAD(HtUsuario user)
+        public Boolean comprobarContraseñaAD(HtEmpleado empleado)
         {
             Boolean resultado = true;
             SqlCommand com = ConexionAD.GET_CONEXION().CreateCommand();
@@ -62,20 +66,21 @@ namespace Planeacion.Datos
                 com.CommandText = "verificarContraseña";
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.Clear();
-                
-                com.Parameters.Add(new SqlParameter("@Contraseña", user.Contraseña));
-               
+
+                com.Parameters.Add(new SqlParameter("@Contraseña", empleado.HtClave));
+
                 com.Connection.Open();
                 // 
                 SqlDataReader dr = com.ExecuteReader();
-                
-                if (dr.HasRows){
+
+                if (dr.HasRows)
+                {
                     resultado = false;
                 }
             }
             catch (Exception ex)
             {
-                
+
                 // esta excepcion solo es para pruebas
                 throw ex;
 
@@ -93,32 +98,33 @@ namespace Planeacion.Datos
             return resultado;
         }
 
-        // retorna Un usuario que concuerde con su nombre y contraseña de lo contrario devuelve nulo
-        public HtUsuario comprobarUsuarioAD(HtUsuario user)
+        // retorna Un Empleado que concuerde con su nombre y contraseña de lo contrario devuelve nulo
+        public HtEmpleado comprobarEmpleadoAD(HtEmpleado empleado)
         {
-            HtUsuario resultado = new HtUsuario();
+            HtEmpleado resultado = new HtEmpleado();
             SqlCommand com = ConexionAD.GET_CONEXION().CreateCommand();
             try
             {
 
-                com.CommandText = "verificarUsuario";
+                com.CommandText = "verificarEmpleado";
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.Clear();
-                
-                com.Parameters.Add(new SqlParameter("@Contraseña", user.Contraseña));
-                com.Parameters.Add(new SqlParameter("@Nombre", user.Nombre));
+
+                com.Parameters.Add(new SqlParameter("@Contraseña", empleado.HtClave));
+                com.Parameters.Add(new SqlParameter("@Nombre", empleado.HtNombreEmpleado));
                 com.Connection.Open();
-               
+
                 SqlDataReader dr = com.ExecuteReader();
 
                 if (dr.HasRows)
                 {
-                    while (dr.Read()) {
+                    while (dr.Read())
+                    {
 
-                        resultado.Id =  int.Parse(dr["Id"].ToString());
-                        resultado.Nombre = dr["Nombre"].ToString();
-                        resultado.Apellido = dr["Apellido"].ToString();
-                    
+                        resultado.HtIdEmpleado = int.Parse(dr["HtIdEmpleado"].ToString());
+                        resultado.HtNombreEmpleado = dr["u.HtNombreEmpleado"].ToString();
+                      
+
                     }
                 }
             }
@@ -143,15 +149,15 @@ namespace Planeacion.Datos
         }
 
 
-        // metodo que devuelve una lista de usuarios, solo para administradores
-        public List<HtUsuario> ObtenerUsuariosAD()
+        // metodo que devuelve una lista de Empleados, solo para administradores
+        public List<HtEmpleado> ObtenerEmpleadosAD()
         {
-            List<HtUsuario> listaUsuarios = new List<HtUsuario>();
+            List<HtEmpleado> listaEmpleados = new List<HtEmpleado>();
             SqlCommand com = ConexionAD.GET_CONEXION().CreateCommand();
             try
             {
 
-                com.CommandText = "seleccionarUsuarios";
+                com.CommandText = "seleccionarEmpleados";
                 com.CommandType = CommandType.StoredProcedure;
 
                 com.Connection.Open();
@@ -162,19 +168,21 @@ namespace Planeacion.Datos
                 {
                     while (dr.Read())
                     {
-                        HtUsuario lUsuario = new HtUsuario();
-                        lUsuario.Id = int.Parse(dr["Id"].ToString());
-                        lUsuario.Nombre = dr["Nombre"].ToString();
-                        lUsuario.Apellido = dr["Apellido"].ToString();
-                        lUsuario.Contraseña = dr["Contraseña"].ToString();
-                        lUsuario.tipoUsuario = int.Parse(dr["tipoUsuario"].ToString());
-                        listaUsuarios.Add(lUsuario);
+                        HtEmpleado lEmpleado = new HtEmpleado();
+                        lEmpleado.HtIdEmpleado = int.Parse(dr["HtIdEmpleado"].ToString());
+                        lEmpleado.HtNombreEmpleado = dr["HtNombreEmpleado"].ToString();
+                        lEmpleado.HtIdSupervisor = int.Parse(dr["HtIdSupervisor"].ToString());
+                        lEmpleado.HtClave = dr["HtClave"].ToString();
+                        lEmpleado.HtIdTipoEmpleado = int.Parse(dr["HtIdTipoEmpleado"].ToString());
+                        lEmpleado.HtEstado = Boolean.Parse(dr["HtEstado"].ToString());
+                     
+                        listaEmpleados.Add(lEmpleado);
                     }
                 }
             }
             catch (Exception ex)
             {
-                listaUsuarios = null;
+                listaEmpleados = null;
                 // esta excepcion solo es para pruebas
                 throw ex;
 
@@ -189,13 +197,11 @@ namespace Planeacion.Datos
 
             }
 
-            return listaUsuarios;
+            return listaEmpleados;
         }
 
 
 
         #endregion
-
-
     }
 }
