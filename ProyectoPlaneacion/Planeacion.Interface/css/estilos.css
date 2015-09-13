@@ -1,43 +1,52 @@
-﻿
+﻿body {
+    background: rgba(235,233,249,1);
+    background: -moz-linear-gradient(left, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 28%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(235,233,249,1)), color-stop(28%, rgba(216,208,239,1)), color-stop(51%, rgba(206,199,236,1)), color-stop(100%, rgba(193,191,234,1)));
+    background: -webkit-linear-gradient(left, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 28%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
+    background: -o-linear-gradient(left, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 28%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
+    background: -ms-linear-gradient(left, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 28%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
+    background: linear-gradient(to right, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 28%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea', GradientType=1 );
+}
+
 .Login {
     height: 250px;
     width: 450px;
     margin-left: 30%;
     padding-left: 50px;
-    margin-top:10%;
+    margin-top: 10%;
     -moz-border-radius: 18px;
--webkit-border-radius: 18px;
-border-radius: 18px;
-/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
--moz-box-shadow: 0px 0px 15px #000000;
--webkit-box-shadow: 0px 0px 15px #000000;
-box-shadow: 0px 0px 15px #000000;
-/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#000000');
-/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
-/*Element must have a height (not auto)*/
-/*All filters must be placed together*/
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#000000')";
-/*Element must have a height (not auto)*/
-/*All filters must be placed together*/
-background-image: -moz-linear-gradient(top, #ffffff, #000000);
-background-image: -ms-linear-gradient(top, #ffffff, #000000);
-background-image: -o-linear-gradient(top, #ffffff, #000000);
-background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#000000));
-background-image: -webkit-linear-gradient(top, #ffffff, #000000);
-background-image: linear-gradient(top, #ffffff, #000000);
--moz-background-clip: padding;
--webkit-background-clip: padding-box;
-background-clip: padding-box;
-/*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
-/*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
-opacity: 0.57;
--ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 57);
-/*-ms-filter must come before filter*/
-filter: alpha(opacity = 57);
-/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
-/*All filters must be placed together*/
-
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 15px #000000;
+    -webkit-box-shadow: 0px 0px 15px #000000;
+    box-shadow: 0px 0px 15px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#000000');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#000000')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: -moz-linear-gradient(top, #ffffff, #000000);
+    background-image: -ms-linear-gradient(top, #ffffff, #000000);
+    background-image: -o-linear-gradient(top, #ffffff, #000000);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#000000));
+    background-image: -webkit-linear-gradient(top, #ffffff, #000000);
+    background-image: linear-gradient(top, #ffffff, #000000);
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+    opacity: 0.57;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 57);
+    /*-ms-filter must come before filter*/
+    filter: alpha(opacity = 57);
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*All filters must be placed together*/
 }
 
 .BotonLogin {
@@ -52,14 +61,14 @@ filter: alpha(opacity = 57);
 
 .modalpopup {
     /*background-color: White;*/
-   background: rgba(242,246,248,1);
-background: -moz-linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
-background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(242,246,248,1)), color-stop(28%, rgba(216,225,231,1)), color-stop(50%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
-background: -webkit-linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
-background: -o-linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
-background: -ms-linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
-background: linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=1 );
+    background: rgba(242,246,248,1);
+    background: -moz-linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(242,246,248,1)), color-stop(28%, rgba(216,225,231,1)), color-stop(50%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
+    background: -webkit-linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
+    background: linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=1 );
     /*padding: 6px 6px 6px 6px;*/
     -moz-box-shadow: 16px 10px 5px #000000;
     -webkit-box-shadow: 16px 10px 5px #000000;
@@ -78,5 +87,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', end
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 37px;
-    
 }

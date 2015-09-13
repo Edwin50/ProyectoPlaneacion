@@ -15,7 +15,7 @@ namespace Planeacion.Datos
        public static SqlConnection GET_CONEXION()  
        {
 
-           return new SqlConnection(String.Format(@"Server=ALONSO-PC\ALONSO;Database=HTBase;User Id=Alonso;Password=1234;"));
+           return new SqlConnection(String.Format(@"Server=ALONSO-PC;Database=HtBase;User Id=Alonso;Password=1234;"));
        }
        #endregion
     }

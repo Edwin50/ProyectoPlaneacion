@@ -122,11 +122,12 @@ namespace Planeacion.Datos
                     {
 
                         resultado.HtIdEmpleado = int.Parse(dr["HtIdEmpleado"].ToString());
-                        resultado.HtNombreEmpleado = dr["u.HtNombreEmpleado"].ToString();
-                      
+                        resultado.HtNombreEmpleado = dr["HtNombreEmpleado"].ToString();
+
 
                     }
                 }
+                else { resultado = null; }
             }
             catch (Exception ex)
             {

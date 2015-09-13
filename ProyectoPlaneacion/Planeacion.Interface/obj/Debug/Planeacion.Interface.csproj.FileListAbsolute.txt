@@ -8,5 +8,12 @@ C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interfac
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Interface.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Interface.pdb
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\AjaxControlToolkit.dll
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Entidades.dll
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.LogicaNegocio.dll
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Datos.dll
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Entidades.pdb
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.LogicaNegocio.pdb
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Datos.pdb
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.csprojResolveAssemblyReference.cache
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.pdb
