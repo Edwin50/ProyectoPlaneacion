@@ -2,3 +2,4 @@ C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Entidade
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Entidades\bin\Debug\Planeacion.Entidades.pdb
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Entidades\obj\Debug\Planeacion.Entidades.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Entidades\obj\Debug\Planeacion.Entidades.pdb
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Entidades\obj\Debug\Planeacion.Entidades.csprojResolveAssemblyReference.cache

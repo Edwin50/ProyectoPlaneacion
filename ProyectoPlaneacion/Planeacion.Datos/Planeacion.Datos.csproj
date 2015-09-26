@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionAD.cs" />
+    <Compile Include="HtBoletaAD.cs" />
     <Compile Include="HtEmpleadoAD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

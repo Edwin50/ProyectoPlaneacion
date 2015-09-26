@@ -1,5 +1,5 @@
 /****PROCEDIMIENTOS USUARIOS******/
-use HtBase;
+use HtBase2;
 /*********
 
 drop procedure RUD_Empleado
@@ -67,3 +67,7 @@ create procedure seleccionarEmpleados
  Select HtIdEmpleado,HtNombreEmpleado,HtIdSupervisor,
  HtClave,HtEstado, HtIdTipoEmpleado from HtEmpleado
  end;
+
+
+
+ 

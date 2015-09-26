@@ -96,7 +96,7 @@ namespace Planeacion.Interface
                 if (lEmple != null)
                 {
                     Session["Empleado"] = lEmple;
-                    Response.Redirect("WebForm1.aspx",false);
+                    Response.Redirect("HtBoletaUI.aspx", false);
                 }
                 else {
                     this.Panel1.Attributes.Add("Style", "display:none");

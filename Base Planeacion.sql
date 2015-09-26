@@ -2,10 +2,12 @@
 -- server ALONSO-PC\SQLEXPRESS
 /*
 use master
-create database HtBase;
+create database HtBase2;
 -- drop database HtBase
  use HtBase;
  */
+
+ 
 create table HtTrimestre(
 HtIdTrimestre int identity primary key,
 HtDescTrimestre nvarchar(50),
@@ -163,32 +165,7 @@ create table HtOutsourcing(
   constraint pk_OutSourcing primary key(HtConsecutivo,HtNumActividad,HtIdMes,HtAngo,HtNumLinea)
 );
 
-create table HtDetalleTotales(
-  HtConsecutivo int,
-  HtNumActividad int,
-  HtIdMes int,
-  HtAngo int,
-  HtNumLinea int,
-  HtIdGrupoOcupacional int,
-  HtNombre varchar(50),
-  HtApellido varchar(50),
-  HtCantidad int,
-  HtIdGenero int,
-  HtIdTipoContrato int,
-  HtCedula varchar(20),
-  HtIdRubro int,
-  HtIdCamino int,
-  HtObservaciones nvarchar(400),
-  /*puede ser que haga falta la relacion con el numero de actividad que este relacionado
-  RamaActividad       */
-  constraint fk_DetalleTotal_Contrato foreign key(HtIdTipoContrato) references HtTipoContrato(HtIdContrato),
-  constraint fk_DetalleTotal_Rubro foreign key(HtIdRubro) references HtRubro(HtIdRubro),
-  constraint fk_DetalleTotal_Mes foreign key(HtIdMes) references HtMes(HtIdMes),
-  constraint fk_DetalleTotal_Ango foreign key(HtAngo) references HtAngo(HtAngo),
-  constraint fk_DetalleTotal_Genero foreign key(HtIdGenero) references HtGenero(HtIdGenero),
-  constraint fk_DetalleTotal_GrupoOcu foreign key(HtIdGrupoOcupacional) references HtGrupoOcupacional(HtIdGrupoOcupacional),
-  constraint pk_DetalleTotal primary key(HtConsecutivo,HtNumActividad,HtIdMes,HtAngo,HtNumLinea,HtIdCamino)
-);
+
 
 create table HtBoleta(
   HtIdDistrito int,
@@ -296,11 +273,29 @@ create table HtBoleta(
 );
 
 
-create table HtUsuario(
-Id int identity primary key,
-Nombre nvarchar(20),
-Apellido nvarchar(50),
-Contraseña nvarchar(50)unique,
-tipoUsuario int
+create table HtDetalleTotales(
+  HtConsecutivo int,
+  HtNumActividad int,
+  HtIdMes int,
+  HtAngo int,
+  HtNumLinea int,
+  HtIdGrupoOcupacional int,
+  HtNombre varchar(50),
+  HtApellido varchar(50),
+  HtCantidad int,
+  HtIdGenero int,
+  HtIdTipoContrato int,
+  HtCedula varchar(20),
+  HtIdRubro int,
+  HtIdCamino int,
+  HtObservaciones nvarchar(400),
+  /*puede ser que haga falta la relacion con el numero de actividad que este relacionado
+  RamaActividad       */
+  constraint fk_DetalleTotal_Contrato foreign key(HtIdTipoContrato) references HtTipoContrato(HtIdContrato),
+  constraint fk_DetalleTotal_Rubro foreign key(HtIdRubro) references HtRubro(HtIdRubro),
+  constraint fk_DetalleTotal_Boleta foreign key(HtConsecutivo,HtNumActividad,HtIdMes,HtAngo) references HtBoleta(HtConsecutivo,HtNumActividad,HtIdMes,HtAngo),
+  constraint fk_DetalleTotal_Genero foreign key(HtIdGenero) references HtGenero(HtIdGenero),
+  constraint fk_DetalleTotal_GrupoOcu foreign key(HtIdGrupoOcupacional) references HtGrupoOcupacional(HtIdGrupoOcupacional),
+  constraint pk_DetalleTotal primary key(HtConsecutivo,HtNumActividad,HtIdMes,HtAngo,HtNumLinea,HtIdCamino)
 );
 
