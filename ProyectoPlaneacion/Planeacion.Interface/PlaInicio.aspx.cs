@@ -29,7 +29,6 @@ namespace Planeacion.Interface
 
         protected void bt_Login_Click(object sender, EventArgs e)
         {
-         
             if (this.fnComprobarCamposLogin())
             {
                 lpAccionLogin();
@@ -136,7 +135,6 @@ namespace Planeacion.Interface
         #endregion
         #region "Validaciones"
         private Boolean fnComprobarCamposLogin() {
-
             Boolean result = true;
             try { 
                     

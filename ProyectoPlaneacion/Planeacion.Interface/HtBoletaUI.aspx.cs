@@ -19,7 +19,6 @@ namespace Planeacion.Interface
         protected void Page_Load(object sender, EventArgs e)
         {
             // Cargar el dataset de las boletas
-            this.Master.TituloLocal = "Encabezado de Boleta";
         }
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
@@ -43,7 +42,7 @@ namespace Planeacion.Interface
             this.ButtonModificar.Visible = false;
             this.ButtonEliminar.Visible = false;
             ModalPopupExtender1.Hide();
-          //  this.Master.lpMensaje(this, "No sirve el cancel");
+            this.Master.lpMensaje(this, "No sirve el cancel");
         }
         protected void bt_Nuevo_Click(object sender, EventArgs e)
         {

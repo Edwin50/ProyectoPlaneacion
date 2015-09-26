@@ -21,7 +21,7 @@
                 <asp:Button ID="bt_Nuevo" runat="server" Text="Nueva Boleta" CssClass="boton" OnClick="bt_Nuevo_Click" />
                                 <asp:Button ID="Button1" runat="server" Text="Nueva Boleta" Style ="display:none;"/>
             </div>
-            <asp:Panel ID="Panel1" runat="server" CssClass="modalpopup"  >
+            <asp:Panel ID="Panel1" runat="server" CssClass="modalpopup" Style="display: none;" >
                 <asp:Label ID="Label94" runat="server" Text="Boleta" style="font-size: xx-large; font-weight: 700; color: #3366FF"></asp:Label>
                 <div class="scroll">
                     <div class="datagrid">
