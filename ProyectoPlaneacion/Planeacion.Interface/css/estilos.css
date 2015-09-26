@@ -7,6 +7,8 @@
     background: -ms-linear-gradient(left, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 28%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
     background: linear-gradient(to right, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 28%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea', GradientType=1 );
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: Comic Sans, Comic Sans MS, cursive;
 }
 
 .Login {
@@ -30,7 +32,7 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#000000')";
     /*Element must have a height (not auto)*/
     /*All filters must be placed together*/
-    background-image: -moz-linear-gradient(top, #ffffff, #000000);
+    /*background-image: -moz-linear-gradient(top, #ffffff, #000000);
     background-image: -ms-linear-gradient(top, #ffffff, #000000);
     background-image: -o-linear-gradient(top, #ffffff, #000000);
     background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#000000));
@@ -38,21 +40,78 @@
     background-image: linear-gradient(top, #ffffff, #000000);
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
-    background-clip: padding-box;
+    background-clip: padding-box;*/
     /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
     /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
-    opacity: 0.57;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 57);
+    /*opacity: 0.57;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 57);*/
     /*-ms-filter must come before filter*/
-    filter: alpha(opacity = 57);
+    /*filter: alpha(opacity = 57);*/
     /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
     /*All filters must be placed together*/
+    background: rgba(212,228,239,1);
+    background: -moz-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(163,212,231,1) 31%, rgba(127,199,224,1) 54%, rgba(55,175,212,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(212,228,239,1)), color-stop(31%, rgba(163,212,231,1)), color-stop(54%, rgba(127,199,224,1)), color-stop(100%, rgba(55,175,212,1)));
+    background: -webkit-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(163,212,231,1) 31%, rgba(127,199,224,1) 54%, rgba(55,175,212,1) 100%);
+    background: -o-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(163,212,231,1) 31%, rgba(127,199,224,1) 54%, rgba(55,175,212,1) 100%);
+    background: -ms-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(163,212,231,1) 31%, rgba(127,199,224,1) 54%, rgba(55,175,212,1) 100%);
+    background: linear-gradient(to bottom, rgba(212,228,239,1) 0%, rgba(163,212,231,1) 31%, rgba(127,199,224,1) 54%, rgba(55,175,212,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#37afd4', GradientType=0 );
 }
+
+
 
 .BotonLogin {
     margin-left: 350px;
 }
 
+.botonLogin2 {
+    padding: 5px 20px;
+    border: 1px solid #439F07;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 10px 10px rgba(255,255,255,0.1);
+    border-radius: 0.3em;
+    background: rgb(138,199,84); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(138,199,84,1) 0%, rgba(121,201,50,1) 45%, rgba(102,190,24,1) 48%, rgba(57,150,2,1) 97%, rgba(102,174,63,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(138,199,84,1)), color-stop(45%,rgba(121,201,50,1)), color-stop(48%,rgba(102,190,24,1)), color-stop(97%,rgba(57,150,2,1)), color-stop(100%,rgba(102,174,63,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(138,199,84,1) 0%,rgba(121,201,50,1) 45%,rgba(102,190,24,1) 48%,rgba(57,150,2,1) 97%,rgba(102,174,63,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(138,199,84,1) 0%,rgba(121,201,50,1) 45%,rgba(102,190,24,1) 48%,rgba(57,150,2,1) 97%,rgba(102,174,63,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(138,199,84,1) 0%,rgba(121,201,50,1) 45%,rgba(102,190,24,1) 48%,rgba(57,150,2,1) 97%,rgba(102,174,63,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(138,199,84,1) 0%,rgba(121,201,50,1) 45%,rgba(102,190,24,1) 48%,rgba(57,150,2,1) 97%,rgba(102,174,63,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ac754', endColorstr='#66ae3f',GradientType=0 ); /* IE6-9 */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    outline: none;
+}
+
+.btn {
+    background: #f05a09;
+    background-image: -webkit-linear-gradient(top, #f05a09, #cf3621);
+    background-image: -moz-linear-gradient(top, #f05a09, #cf3621);
+    background-image: -ms-linear-gradient(top, #f05a09, #cf3621);
+    background-image: -o-linear-gradient(top, #f05a09, #cf3621);
+    background-image: linear-gradient(to bottom, #f05a09, #cf3621);
+    -webkit-border-radius: 16;
+    -moz-border-radius: 16;
+    border-radius: 16px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+    .btn:hover {
+        background: #fc6f3c;
+        background-image: -webkit-linear-gradient(top, #fc6f3c, #d96834);
+        background-image: -moz-linear-gradient(top, #fc6f3c, #d96834);
+        background-image: -ms-linear-gradient(top, #fc6f3c, #d96834);
+        background-image: -o-linear-gradient(top, #fc6f3c, #d96834);
+        background-image: linear-gradient(to bottom, #fc6f3c, #d96834);
+        text-decoration: none;
+    }
 
 .modalbackground {
     background-color: Gray;
@@ -61,6 +120,8 @@
 }
 
 .modalpopup {
+    
+    
     /*background-color: White;*/
     background: rgba(242,246,248,1);
     background: -moz-linear-gradient(45deg, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 50%, rgba(224,239,249,1) 100%);
@@ -91,13 +152,15 @@
 }
 
 
+
+}
+
 div.scroll {
     height: 300px;
-    width: 100%;
+    width: 600px;
     overflow: auto;
     border: 1px solid #666;
     background-color: #ccc;
-  
 }
 
 .datagrid table {
