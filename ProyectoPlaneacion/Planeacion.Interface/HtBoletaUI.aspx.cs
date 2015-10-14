@@ -8,17 +8,37 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 
+
 namespace Planeacion.Interface
 {
     public partial class HtBoletaUI : System.Web.UI.Page
     {
 
-
+      private  TipoCambioLN cambio = new TipoCambioLN();
         private HtBoletaLN gHtBoletaLN = new HtBoletaLN();
         #region "Eventos Page"
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Cargar el dataset de las boletas
+            try {
+                this.TextBox32.Text = cambio.fnTipoCambioDolar();
+                this.TextBox32.ReadOnly = true;
+                if (!this.IsPostBack)
+                { // carga la pagina por primera vez
+
+
+
+                }
+                else
+                {//  ocurre cuando hay un poskback
+
+                }
+                // Cargar el dataset de las boletas
+                this.Master.TituloLocal = "Mantenimiento de Boletas";
+            }
+            catch (Exception ex) {
+                this.Master.lpMensaje(this, ex.Message);
+            }
+            
         }
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
@@ -41,18 +61,23 @@ namespace Planeacion.Interface
             this.ButtonAgregar.Visible = false;
             this.ButtonModificar.Visible = false;
             this.ButtonEliminar.Visible = false;
-            ModalPopupExtender1.Hide();
+       //     ModalPopupExtender1.Hide();
             this.Master.lpMensaje(this, "No sirve el cancel");
         }
         protected void bt_Nuevo_Click(object sender, EventArgs e)
         {
             // no hace nada
             this.ButtonAgregar.Visible = true;
-            this.ModalPopupExtender1.Show();
+    //        this.ModalPopupExtender1.Show();
         }
         #endregion
         #region "Metodos Locales"
         private void AgregarBoleta() {
+            try
+            {
+                 
+         
+                
             HtBoleta lBoleta = new HtBoleta();
             lBoleta.HtIdDistrito = int.Parse(this.TextBox1.Text);
             lBoleta.HtConsecutivo = int.Parse(this.TextBox2.Text);
@@ -85,7 +110,7 @@ namespace Planeacion.Interface
             lBoleta.HtFechaEntrevista = DateTime.Parse(this.TextBox29.Text);
             lBoleta.HtFechaUltimaModificacion = DateTime.Parse(this.TextBox30.Text);
             lBoleta.HtIntentosEntrevista = short.Parse(this.TextBox31.Text);
-            lBoleta.HtTipoDeCambio = short.Parse(this.TextBox32.Text);
+            lBoleta.HtTipoDeCambio = short.Parse(cambio.fnTipoCambioDolar());
             lBoleta.HtIdTipoMoneda = int.Parse(this.TextBox33.Text);
             lBoleta.HtTotalDirectivosMujer = int.Parse(this.TextBox34.Text);
             lBoleta.HtTotalDirectivosHombre = int.Parse(this.TextBox35.Text);
@@ -149,6 +174,14 @@ namespace Planeacion.Interface
             lBoleta.HtIdEntrevistador = int.Parse(this.TextBox93.Text);
 
             gHtBoletaLN.RUDBoletasLN(lBoleta,1);
+
+            }
+            catch (Exception ex) {
+                this.Master.lpMensaje(this, ex.Message);
+            }
+
+                
+           
         }
         #endregion
 

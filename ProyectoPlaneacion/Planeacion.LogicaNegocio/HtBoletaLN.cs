@@ -16,7 +16,7 @@ namespace Planeacion.LogicaNegocio
         #region "Procesos internos Boletas"
         public Int32 RUDBoletasLN(HtBoleta lBoleta, int accion)
         {
-
+          
             return this.boleta.RUDBoletasAD(lBoleta, accion);
 
         }

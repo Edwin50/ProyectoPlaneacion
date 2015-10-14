@@ -91,13 +91,11 @@
 }
 
 
-div.scroll {
-    height: 300px;
+.scroll {
+    height: 239px;
     width: 100%;
-    overflow: auto;
     border: 1px solid #666;
     background-color: #ccc;
-  
 }
 
 .datagrid table {
@@ -115,6 +113,11 @@ div.scroll {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
+
+    .datagrid label {
+        font-size: large;
+        color: #333300;
+    }
 
     .datagrid table td, .datagrid table th {
         padding: 3px 10px;
@@ -242,3 +245,30 @@ div.dhtmlx_window_active, div.dhx_modal_cover_dv {
         background-image: linear-gradient(to bottom, #82bbd1, #193b61);
         filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#82bbd1, endColorstr=#193b61);
     }
+
+﻿.accordionHeader {
+    /**/ /*background-color: #2E4d7B;*/
+    width:100%;
+    height:90px;
+    background: #b8e1fc; /* Old browsers */
+    background: -moz-linear-gradient(top, #b8e1fc 0%, #a9d2f3 10%, #90bae4 25%, #90bcea 37%, #90bff0 50%, #6ba8e5 51%, #a2daf5 83%, #bdf3fd 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b8e1fc), color-stop(10%,#a9d2f3), color-stop(25%,#90bae4), color-stop(37%,#90bcea), color-stop(50%,#90bff0), color-stop(51%,#6ba8e5), color-stop(83%,#a2daf5), color-stop(100%,#bdf3fd)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #b8e1fc 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#90bff0 50%,#6ba8e5 51%,#a2daf5 83%,#bdf3fd 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #b8e1fc 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#90bff0 50%,#6ba8e5 51%,#a2daf5 83%,#bdf3fd 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #b8e1fc 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#90bff0 50%,#6ba8e5 51%,#a2daf5 83%,#bdf3fd 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #b8e1fc 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#90bff0 50%,#6ba8e5 51%,#a2daf5 83%,#bdf3fd 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8e1fc', endColorstr='#bdf3fd',GradientType=0 ); /* IE6-9 */
+    border: 2px solid #000000;
+    border-radius: 15px;
+    padding: 7px;
+    box-shadow: 14px 10px 18px #423D3D;
+    -webkit-box-shadow: 14px 10px 18px #423D3D;
+    -moz-box-shadow: 14px 10px 18px #423D3D;
+}
+
+.accordionLink {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    font: normal 23px/normal "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
