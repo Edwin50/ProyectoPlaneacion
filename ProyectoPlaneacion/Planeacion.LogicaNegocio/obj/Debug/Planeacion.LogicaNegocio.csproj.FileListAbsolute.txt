@@ -1,3 +1,4 @@
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.LogicaNegocio\bin\Debug\Planeacion.LogicaNegocio.dll.config
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.LogicaNegocio\bin\Debug\Planeacion.LogicaNegocio.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.LogicaNegocio\bin\Debug\Planeacion.LogicaNegocio.pdb
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.LogicaNegocio\bin\Debug\Planeacion.Datos.dll
@@ -7,4 +8,3 @@ C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.LogicaNe
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.LogicaNegocio\obj\Debug\Planeacion.LogicaNegocio.csprojResolveAssemblyReference.cache
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.LogicaNegocio\obj\Debug\Planeacion.LogicaNegocio.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.LogicaNegocio\obj\Debug\Planeacion.LogicaNegocio.pdb
-C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.LogicaNegocio\bin\Debug\Planeacion.LogicaNegocio.dll.config

@@ -4,6 +4,20 @@ C:\Users\edwin\onedrive\documentos\visual studio 2013\Projects\ProyectoPlaneacio
 C:\Users\edwin\onedrive\documentos\visual studio 2013\Projects\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.csprojResolveAssemblyReference.cache
 C:\Users\edwin\onedrive\documentos\visual studio 2013\Projects\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.dll
 C:\Users\edwin\onedrive\documentos\visual studio 2013\Projects\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.pdb
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap-theme.css
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap-theme.min.css
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap.css
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap.min.css
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\fonts\glyphicons-halflings-regular.svg
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap-theme.css.map
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap.css.map
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\fonts\glyphicons-halflings-regular.eot
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\fonts\glyphicons-halflings-regular.ttf
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\fonts\glyphicons-halflings-regular.woff
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\fonts\glyphicons-halflings-regular.woff2
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\js\bootstrap.js
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\js\bootstrap.min.js
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\js\npm.js
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Interface.dll.config
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Interface.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Interface.pdb

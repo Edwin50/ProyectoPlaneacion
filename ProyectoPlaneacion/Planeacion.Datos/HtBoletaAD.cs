@@ -288,6 +288,151 @@ namespace Planeacion.Datos
             return listaBoletas;
         }
 
+        public HtBoleta ObtenerBoletaIndividualAD(int numActividad,int consecutivo, int mes, int ango)
+        {
+            HtBoleta lBoleta = new HtBoleta();
+            SqlCommand com = ConexionAD.GET_CONEXION().CreateCommand();
+            try
+            {
+
+                com.CommandText = "sp_seleccionarBoleta";
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.Clear();
+
+                com.Parameters.Add(new SqlParameter("@HtConsecutivo", consecutivo));
+                com.Parameters.Add(new SqlParameter("@HtNumActividad ",numActividad));
+                com.Parameters.Add(new SqlParameter("@HtIdMes ", mes));
+                com.Parameters.Add(new SqlParameter("@HtAngo", ango));
+                com.Connection.Open();
+                // 
+                SqlDataReader dr = com.ExecuteReader();
+               
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                       
+
+                        lBoleta.HtIdDistrito = int.Parse(dr["HtIdDistrito"].ToString());
+                        lBoleta.HtConsecutivo = int.Parse(dr["HtConsecutivo"].ToString());
+                        lBoleta.HtNumActividad = int.Parse(dr["HtNumActividad"].ToString());
+                        lBoleta.HtIdMes = int.Parse(dr["HtIdMes"].ToString());
+                        lBoleta.HtAngo = int.Parse(dr["HtAngo"].ToString());
+                        lBoleta.HtNumIdentificacionNegocio = dr["HtNumIdentificacionNegocio"].ToString();
+                        lBoleta.HtNomNegocio = dr["HtNomNegocio"].ToString();
+                        lBoleta.HtNomLegal = dr["HtNomLegal"].ToString();
+                        lBoleta.HtNumRazonSocial = int.Parse(dr["HtNumRazonSocial"].ToString());
+                        lBoleta.HtDirNegocio = dr["HtDirNegocio"].ToString();
+                        lBoleta.HtTel1Negocio = int.Parse(dr["HtTel1Negocio"].ToString());
+                        lBoleta.HtExt1Negocio = int.Parse(dr["HtExt1Negocio"].ToString());
+                        lBoleta.HtEmail = dr["HtEmail"].ToString();
+                        lBoleta.HtCantidadTrabajadores = short.Parse(dr["HtCantidadTrabajadores"].ToString());
+                        lBoleta.HtCantidadTrabajadoresHombres = short.Parse(dr["HtCantidadTrabajadoresHombres"].ToString());
+                        lBoleta.HtCantidadTrabajadoresNujeres = short.Parse(dr["HtCantidadTrabajadoresNujeres"].ToString());
+                        lBoleta.HtDescCIIUProductoPrincipal = dr["HtDescCIIUProductoPrincipal"].ToString();
+                        lBoleta.HtNumCiiu4 = dr["HtNumCiiu4"].ToString();
+                        lBoleta.HtNombreInformante = dr["HtNombreInformante"].ToString();
+                        lBoleta.HtCargoDelInformante = dr["HtCargoDelInformante"].ToString();
+                        lBoleta.HtTelefonoInformante = int.Parse(dr["HtTelefonoInformante"].ToString());
+                        lBoleta.HtEmailInformante = dr["HtEmailInformante"].ToString();
+                        lBoleta.HtIdResultadoEntrevista = int.Parse(dr["HtIdResultadoEntrevista"].ToString());
+                        lBoleta.HtObservaciones = dr["HtObservaciones"].ToString();
+                        lBoleta.HtIdEmpleado = int.Parse(dr["HtIdEmpleado"].ToString());
+                        lBoleta.HtHoraInicio = DateTime.Parse(dr["HtHoraInicio"].ToString());
+                        lBoleta.HtHoraFinal = DateTime.Parse(dr["HtHoraFinal"].ToString());
+                        lBoleta.HtDuracionEntrevista = dr["HtDuracionEntrevista"].ToString();
+                        lBoleta.HtFechaEntrevista = DateTime.Parse(dr["HtFechaEntrevista"].ToString());
+                        lBoleta.HtFechaUltimaModificacion = DateTime.Parse(dr["HtFechaUltimaModificacion"].ToString());
+                        lBoleta.HtIntentosEntrevista = short.Parse(dr["HtIntentosEntrevista"].ToString());
+                        lBoleta.HtTipoDeCambio = short.Parse(dr["HtTipoDeCambio"].ToString());
+                        lBoleta.HtIdTipoMoneda = int.Parse(dr["HtIdTipoMoneda"].ToString());
+                        lBoleta.HtTotalDirectivosMujer = int.Parse(dr["HtTotalDirectivosMujer"].ToString());
+                        lBoleta.HtTotalDirectivosHombre = int.Parse(dr["HtTotalDirectivosHombre"].ToString());
+                        lBoleta.HtTotalDirectivos = int.Parse(dr["HtTotalDirectivos"].ToString());
+                        lBoleta.HtTotalProfesionalesMujer = int.Parse(dr["HtTotalProfesionalesMujer"].ToString());
+                        lBoleta.HtTotalProfesionalesHombre = int.Parse(dr["HtTotalProfesionalesHombre"].ToString());
+                        lBoleta.HtTotalProfesionales = int.Parse(dr["HtTotalProfesionales"].ToString());
+                        lBoleta.HtTotalTecnicosMujer = int.Parse(dr["HtTotalTecnicosMujer"].ToString());
+                        lBoleta.HtTotalTecnicosHombre = int.Parse(dr["HtTotalTecnicosHombre"].ToString());
+                        lBoleta.HtTotalTecnicos = int.Parse(dr["HtTotalTecnicos"].ToString());
+                        lBoleta.HtTotalApoyoAdminMujer = int.Parse(dr["HtTotalApoyoAdminMujer"].ToString());
+                        lBoleta.HtTotalApoyoAdminHombre = int.Parse(dr["HtTotalApoyoAdminHombre"].ToString());
+                        lBoleta.HtTotalApoyoAdmin = int.Parse(dr["HtTotalApoyoAdmin"].ToString());
+                        lBoleta.HtTotalServiciosMujer = int.Parse(dr["HtTotalServiciosMujer"].ToString());
+                        lBoleta.HtTotalServiciosHombre = int.Parse(dr["HtTotalServiciosHombre"].ToString());
+                        lBoleta.HtTotalServicios = int.Parse(dr["HtTotalServicios"].ToString());
+                        lBoleta.HtTotalAgricultoresMujer = int.Parse(dr["HtTotalAgricultoresMujer"].ToString());
+                        lBoleta.HtTotalAgricultoresHombre = int.Parse(dr["HtTotalAgricultoresHombre"].ToString());
+                        lBoleta.HtTotalAgricultores = int.Parse(dr["HtTotalAgricultores"].ToString());
+                        lBoleta.HtTotalOperariosMujer = int.Parse(dr["HtTotalOperariosMujer"].ToString());
+                        lBoleta.HtTotalOperariosHombre = int.Parse(dr["HtTotalOperariosHombre"].ToString());
+                        lBoleta.HtTotalOperarios = int.Parse(dr["HtTotalOperarios"].ToString());
+                        lBoleta.HtTotalOperadoresMujer = int.Parse(dr["HtTotalOperadoresMujer"].ToString());
+                        lBoleta.HtTotalOperadoresHombre = int.Parse(dr["HtTotalOperadoresHombre"].ToString());
+                        lBoleta.HtTotalOperadores = int.Parse(dr["HtTotalOperadores"].ToString());
+                        lBoleta.HtTotalOcupElementalesMujer = int.Parse(dr["HtTotalOcupElementalesMujer"].ToString());
+                        lBoleta.HtTotalOcupElementalesHombre = int.Parse(dr["HtTotalOcupElementalesHombre"].ToString());
+                        lBoleta.HtTotalOcupElementales = int.Parse(dr["HtTotalOcupElementales"].ToString());
+                        lBoleta.HtSalarioBaseTotal = int.Parse(dr["HtSalarioBaseTotal"].ToString());
+                        lBoleta.HtSalEspecieTotal = int.Parse(dr["HtSalEspecieTotal"].ToString());
+                        lBoleta.HtPagoHrsExtraTotal = int.Parse(dr["HtPagoHrsExtraTotal"].ToString());
+                        lBoleta.HtAguinaldoTotal = int.Parse(dr["HtAguinaldoTotal"].ToString());
+                        lBoleta.HtSalEscolarTotal = int.Parse(dr["HtSalEscolarTotal"].ToString());
+                        lBoleta.HtRemuneracionesTotal = int.Parse(dr["HtRemuneracionesTotal"].ToString());
+                        lBoleta.HtTotalCostoDirectivos = int.Parse(dr["HtTotalCostoDirectivos"].ToString());
+                        lBoleta.HtTotalCostoProfecionales = int.Parse(dr["HtTotalCostoProfecionales"].ToString());
+                        lBoleta.HtTotalCostoTecnicos = int.Parse(dr["HtTotalCostoTecnicos"].ToString());
+                        lBoleta.HtTotalCostoApoyoAdmin = int.Parse(dr["HtTotalCostoApoyoAdmin"].ToString());
+                        lBoleta.HtTotalCostoServicios = int.Parse(dr["HtTotalCostoServicios"].ToString());
+                        lBoleta.HtTotalCostoAgricultores = int.Parse(dr["HtTotalCostoAgricultores"].ToString());
+                        lBoleta.HtTotalCostoOperarios = int.Parse(dr["HtTotalCostoOperarios"].ToString());
+                        lBoleta.HtTotalCostoOperadores = int.Parse(dr["HtTotalCostoOperadores"].ToString());
+                        lBoleta.HtTotalCostoOcupElementales = int.Parse(dr["HtTotalCostoOcupElementales"].ToString());
+                        lBoleta.HtTotalCosto = int.Parse(dr["HtTotalCosto"].ToString());
+                        lBoleta.HtDeducccionTotal = int.Parse(dr["HtDeducccionTotal"].ToString());
+                        lBoleta.HtTotalHorasDerectivos = int.Parse(dr["HtTotalHorasDerectivos"].ToString());
+                        lBoleta.HtTotalHorasProfecionales = int.Parse(dr["HtTotalHorasProfecionales"].ToString());
+                        lBoleta.HtTotalHorasTecnicos = int.Parse(dr["HtTotalHorasTecnicos"].ToString());
+                        lBoleta.HtTotalHorasApoyoAdmin = int.Parse(dr["HtTotalHorasApoyoAdmin"].ToString());
+                        lBoleta.HtTotalHorasServicios = int.Parse(dr["HtTotalHorasServicios"].ToString());
+                        lBoleta.HtTotalHorasAgricultores = int.Parse(dr["HtTotalHorasAgricultores"].ToString());
+                        lBoleta.HtTotalHorasOperarios = int.Parse(dr["HtTotalHorasOperarios"].ToString());
+                        lBoleta.HtTotalHorasOperadores = int.Parse(dr["HtTotalHorasOperadores"].ToString());
+                        lBoleta.HtTotalHorasOcupElementales = int.Parse(dr["HtTotalHorasOcupElementales"].ToString());
+                        lBoleta.HtTotalHorasOrdinarias = int.Parse(dr["HtTotalHorasOrdinarias"].ToString());
+                        lBoleta.HtTotalHorasExtra = int.Parse(dr["HtTotalHorasExtra"].ToString());
+                        lBoleta.HtTotalHoras = int.Parse(dr["HtTotalHoras"].ToString());
+                        lBoleta.HtTotalOutsourcing = int.Parse(dr["HtTotalOutsourcing"].ToString());
+                        lBoleta.HtTotalOutsourcingMujer = int.Parse(dr["HtTotalOutsourcingMujer"].ToString());
+                        lBoleta.HtTotalOutsourcingHombre = int.Parse(dr["HtTotalOutsourcingHombre"].ToString());
+                        lBoleta.HtIdEntrevistador = int.Parse(dr["HtIdEntrevistador"].ToString());
+
+
+
+                       
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lBoleta = null;
+                // esta excepcion solo es para pruebas
+                throw ex;
+
+            }
+            finally
+            {
+                if (com.Connection.State == System.Data.ConnectionState.Open)
+                {
+                    com.Connection.Close();
+                }
+                com.Dispose();
+
+            }
+
+            return lBoleta;
+        }
+
         public DataSet ObtenerDataSetBoletasAD()
         {
             List<HtBoleta> listaBoletas = new List<HtBoleta>();

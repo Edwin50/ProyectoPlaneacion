@@ -22,22 +22,13 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control bt_Nuevo.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bt_Nuevo;
-        
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// Control Panel1.
@@ -94,13 +85,13 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control DropDownListDistrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDistrito;
         
         /// <summary>
         /// Control Label2.
@@ -139,6 +130,15 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
         
         /// <summary>
+        /// Control FilteredTextBoxExtender70.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender70;
+        
+        /// <summary>
         /// Control Label4.
         /// </summary>
         /// <remarks>
@@ -148,13 +148,13 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control DropDownListMes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListMes;
         
         /// <summary>
         /// Control Label5.
@@ -166,13 +166,13 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control TextBox5.
+        /// Control DropDownListAngo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListAngo;
         
         /// <summary>
         /// Control Label6.
@@ -238,13 +238,13 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// Control TextBox9.
+        /// Control DropDownListRazon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListRazon;
         
         /// <summary>
         /// Control Label10.
@@ -445,13 +445,13 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.Label Label18;
         
         /// <summary>
-        /// Control TextBox18.
+        /// Control DropDownListCIIU.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox18;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCIIU;
         
         /// <summary>
         /// Control AccordionPane2.
@@ -553,13 +553,13 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.Label Label23;
         
         /// <summary>
-        /// Control TextBox23.
+        /// Control DropDownListEntrevista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox23;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListEntrevista;
         
         /// <summary>
         /// Control Label24.
@@ -598,13 +598,13 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.Label Label25;
         
         /// <summary>
-        /// Control TextBox25.
+        /// Control DropDownListEmpleado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox25;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListEmpleado;
         
         /// <summary>
         /// Control Label26.
@@ -805,13 +805,13 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.Label Label33;
         
         /// <summary>
-        /// Control TextBox33.
+        /// Control DropDownListMoneda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox33;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListMoneda;
         
         /// <summary>
         /// Control Label32.

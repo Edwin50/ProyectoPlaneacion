@@ -7,20 +7,14 @@
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Always">
         <ContentTemplate>
-            <%--      <div style="overflow: auto;">
+            <div style="overflow: auto;">
                 <div class="datagrid">
-                    <asp:GridView ID="GridView1" runat="server">
+                    <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
                         </Columns>
                     </asp:GridView>
                 </div>
-            </div>--%>
-            <div style="padding-left: 70%;">
-                <br />
-                <br />
-                <asp:Button ID="bt_Nuevo" runat="server" Text="Nueva Boleta" CssClass="boton" OnClick="bt_Nuevo_Click" />
-                <asp:Button ID="Button1" runat="server" Text="Nueva Boleta" Style="display: none;" />
             </div>
 
             <%--  Style="display: none;" --%>
@@ -51,45 +45,49 @@
                                             <tr>
                                                 <td>
                                                     <asp:Label ID="Label1" runat="server" Text="IdDistrito"></asp:Label><br />
-
-                                                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br />
+                                                    <asp:DropDownList ID="DropDownListDistrito" runat="server"></asp:DropDownList>
+                                                    <%--<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>--%>
+                                                    <br />
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label2" runat="server" Text="Consecutivo"></asp:Label><br />
-
-                                                    <asp:TextBox ID="TextBox2" runat="server" MaxLength="20"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox2" runat="server" MaxLength="20" ReadOnly="true"></asp:TextBox><br />
                                                 </td>
                                                 <td>
-                                                    <asp:Label ID="Label3" runat="server" Text="NumActividad"></asp:Label><br />
+                                                    <asp:Label ID="Label3" runat="server" Text="Numero Actividad"></asp:Label><br />
 
                                                     <asp:TextBox ID="TextBox3" runat="server" MaxLength="20"></asp:TextBox><br />
-
+                                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender70" runat="server"
+                                                        TargetControlID="TextBox3" FilterType="Numbers" />
                                                 </td>
                                                 <td>
-                                                    <asp:Label ID="Label4" runat="server" Text="IdMes"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><br />
+                                                    <asp:Label ID="Label4" runat="server" Text="Mes"></asp:Label><br />
+                                                    <%--<asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><br />--%>
+                                                    <asp:DropDownList ID="DropDownListMes" runat="server"></asp:DropDownList>
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label5" runat="server" Text="Ango"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox><br />
+                                                    <%--<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox><br />--%>
+                                                    <asp:DropDownList ID="DropDownListAngo" runat="server"></asp:DropDownList>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label6" runat="server" Text="NumIdentificacionNegocio"></asp:Label><br />
+                                                    <asp:Label ID="Label6" runat="server" Text="Numero Identificacion Negocio"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox6" runat="server" MaxLength="20"></asp:TextBox><br />
                                                 </td>
                                                 <td>
-                                                    <asp:Label ID="Label7" runat="server" Text="NomNegocio"></asp:Label><br />
+                                                    <asp:Label ID="Label7" runat="server" Text="Nombre Negocio"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox7" runat="server" MaxLength="200"></asp:TextBox><br />
                                                 </td>
                                                 <td>
-                                                    <asp:Label ID="Label8" runat="server" Text="NomLegal"></asp:Label><br />
+                                                    <asp:Label ID="Label8" runat="server" Text="Nombre Legal"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox8" runat="server" MaxLength="200"></asp:TextBox><br />
                                                 </td>
                                                 <td>
-                                                    <asp:Label ID="Label9" runat="server" Text="NumRazonSocial"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox><br />
+                                                    <asp:Label ID="Label9" runat="server" Text="Numuero RazonSocial"></asp:Label><br />
+                                                    <%--<asp:TextBox ID="TextBox9" runat="server"></asp:TextBox><br />--%>
+                                                    <asp:DropDownList ID="DropDownListRazon" runat="server"></asp:DropDownList>
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label10" runat="server" Text="DirNegocio"></asp:Label><br />
@@ -118,7 +116,7 @@
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label15" runat="server" Text="CantidadTrabajadoresHombres"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox15" runat="server"  CssClass="trabajadores"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox15" runat="server" CssClass="trabajadores"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" FilterType="Numbers" TargetControlID="TextBox15" />
                                                 </td>
                                             </tr>
@@ -136,7 +134,8 @@
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label18" runat="server" Text="NumCiiu4"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox18" runat="server"></asp:TextBox><br />
+                                                    <%--<asp:TextBox ID="TextBox18" runat="server"></asp:TextBox><br />--%>
+                                                    <asp:DropDownList ID="DropDownListCIIU" runat="server" Style="width: 100px"></asp:DropDownList>
                                                 </td>
                                             </tr>
                                         </table>
@@ -175,7 +174,9 @@
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label23" runat="server" Text="IdResultadoEntrevista"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox23" runat="server"></asp:TextBox><br />
+                                                    <%-- <asp:TextBox ID="TextBox23" runat="server"></asp:TextBox>--%>
+                                                    <asp:DropDownList ID="DropDownListEntrevista" runat="server"></asp:DropDownList>
+                                                    <br />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -204,7 +205,9 @@
                                             <tr>
                                                 <td>
                                                     <asp:Label ID="Label25" runat="server" Text="IdEmpleado"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox25" runat="server"></asp:TextBox><br />
+                                                    <%--<asp:TextBox ID="TextBox25" runat="server"></asp:TextBox><br />--%>
+                                                    <asp:DropDownList ID="DropDownListEmpleado" runat="server">
+                                                    </asp:DropDownList>
                                                 </td>
 
                                                 <td>
@@ -262,13 +265,15 @@
                                         <table>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label33" runat="server" Text="IdTipoMoneda"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox33" runat="server"></asp:TextBox><br />
+                                                    <asp:Label ID="Label33" runat="server" Text="TipoMoneda"></asp:Label><br />
+                                                    <%--<asp:TextBox ID="TextBox33" runat="server"></asp:TextBox>--%>
+                                                    <asp:DropDownList ID="DropDownListMoneda" runat="server"></asp:DropDownList>
+                                                    <br />
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label32" runat="server" Text="TipoDeCambio"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox32" runat="server"></asp:TextBox><br />
-                                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender9" runat="server" TargetControlID="TextBox32" FilterType="Custom" ValidChars="0123456789.,"/>
+                                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender9" runat="server" TargetControlID="TextBox32" FilterType="Custom" ValidChars="0123456789.," />
 
                                                 </td>
 
@@ -289,7 +294,7 @@
                                         <table>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label34" runat="server" Text="TotalDirectivosMujer" ></asp:Label><br />
+                                                    <asp:Label ID="Label34" runat="server" Text="TotalDirectivosMujer"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox34" runat="server" CssClass="directivos"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender10" runat="server" TargetControlID="TextBox34" FilterType="Numbers" />
 
@@ -298,7 +303,7 @@
                                                     <asp:Label ID="Label35" runat="server" Text="TotalDirectivosHombre"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox35" runat="server" CssClass="directivos"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender11" runat="server" TargetControlID="TextBox35" FilterType="Numbers" />
-                                                     
+
                                                 </td>
 
                                                 <td>
@@ -731,165 +736,203 @@
                     </div>
                 </asp:Panel>
                 <div style="height: 50px;">
-                    <asp:Button ID="ButtonAgregar" runat="server" Text="Agregar" CssClass="boton" Style="float: right;" OnClick="ButtonAgregar_Click" Visible="false" />
+                    <asp:Button ID="ButtonAgregar" runat="server" Text="Agregar" CssClass="boton" Style="float: right;" OnClick="ButtonAgregar_Click"  />
                     <asp:Button ID="ButtonModificar" runat="server" Text="Modificar" CssClass="boton" Style="float: right;" OnClick="ButtonModificar_Click" Visible="false" />
                     <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="boton" Style="float: right;" OnClick="ButtonEliminar_Click" Visible="false" />
                     <asp:Button ID="bt_Cancel" runat="server" Text="Cancelar" CssClass="boton" Style="float: right;" OnClick="bt_Cancel_Click" />
                 </div>
             </asp:Panel>
 
-            <%--            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server"
-                TargetControlID="Button1" PopupControlID="Panel1" BackgroundCssClass="modalbackground">
-            </ajaxToolkit:ModalPopupExtender>--%>
         </ContentTemplate>
-
-
-
     </asp:UpdatePanel>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+
     <script>
-        // we used jQuery 'keyup' to trigger the computation as the user type
-        $('.trabajadores').keyup(function () {
 
-            // initialize the sum (total price) to zero
-            var sum = 0;
+        function pageLoad(sender, args) {
+            //Your jquery code
 
-            // we use jQuery each() to loop through all the textbox with 'price' class
-            // and compute the sum for each loop
-            $('.trabajadores').each(function () {
-                sum += Number($(this).val());
+
+            // Use jQuery via jQuery(.
+            // we used jQuery 'keyup' to trigger the computation as the user type
+            $('.trabajadores').keyup(function () {
+
+                // initialize the sum (total price) to zero
+                var sum = 0;
+
+                // we use jQuery each() to loop through all the textbox with 'price' class
+                // and compute the sum for each loop
+                $('.trabajadores').each(function () {
+                    sum += Number($(this).val());
+                });
+
+                // set the computed value to 'totalPrice' textbox
+                $('#<%= TextBox14.ClientID %>').val(sum);
+
             });
 
-            // set the computed value to 'totalPrice' textbox
-            $('#<%= TextBox14.ClientID %>').val(sum);
+            $('.directivos').keyup(function () {
 
-        });
+                var sum = 0;
 
-        $('.directivos').keyup(function () {
 
-            var sum = 0;
+                $('.directivos').each(function () {
+                    sum += Number($(this).val());
+                });
 
-       
-            $('.directivos').each(function () {
-                sum += Number($(this).val());
+
+                $('#<%= TextBox36.ClientID %>').val(sum);
+
             });
 
-          
-            $('#<%= TextBox36.ClientID %>').val(sum);
+            $('.Profesionales').keyup(function () {
 
-        });
-
-        $('.Profesionales').keyup(function () {
-
-            var sum = 0;
+                var sum = 0;
 
 
-            $('.Profesionales').each(function () {
-                sum += Number($(this).val());
-            });
+                $('.Profesionales').each(function () {
+                    sum += Number($(this).val());
+                });
 
 
-            $('#<%= TextBox39.ClientID %>').val(sum);
+                $('#<%= TextBox39.ClientID %>').val(sum);
 
-          });
-     
-
-        $('.tecnicos').keyup(function () {
-
-            var sum = 0;
-
-
-            $('.tecnicos').each(function () {
-                sum += Number($(this).val());
             });
 
 
-            $('#<%= TextBox42.ClientID %>').val(sum);
+            $('.tecnicos').keyup(function () {
 
-        });
-        $('.admin').keyup(function () {
-
-            var sum = 0;
+                var sum = 0;
 
 
-            $('.admin').each(function () {
-                sum += Number($(this).val());
+                $('.tecnicos').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox42.ClientID %>').val(sum);
+
+            });
+            $('.admin').keyup(function () {
+
+                var sum = 0;
+
+
+                $('.admin').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox45.ClientID %>').val(sum);
+
+            });
+
+            $('.servicio').keyup(function () {
+
+                var sum = 0;
+
+
+                $('.servicio').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox48.ClientID %>').val(sum);
+
+            });
+            $('.agri').keyup(function () {
+
+                var sum = 0;
+
+
+                $('.agri').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox51.ClientID %>').val(sum);
+
+            });
+            $('.ope').keyup(function () {
+
+                var sum = 0;
+
+
+                $('.ope').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox54.ClientID %>').val(sum);
+
+            });
+
+            $('.opera').keyup(function () {
+
+                var sum = 0;
+
+
+                $('.opera').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox57.ClientID %>').val(sum);
+
+            });
+
+            $('.ele').keyup(function () {
+
+                var sum = 0;
+
+
+                $('.ele').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox60.ClientID %>').val(sum);
+
             });
 
 
-            $('#<%= TextBox45.ClientID %>').val(sum);
+            $('#<%=ButtonAgregar.ClientID%>').click(function (e) {
 
-         });
+                var isValid = true;
 
-        $('.servicio').keyup(function () {
+                $('input[type="text"]').each(function () {
 
-            var sum = 0;
+                    if ($.trim($(this).val()) == '') {
+
+                        isValid = false;
+
+                        $(this).css({
+
+                            "border": "1px solid red"
+
+                        });
+
+                    }
+
+                    else {
+
+                        $(this).css({
+
+                            "border": ""
+
+                        });
+
+                    }
+
+                });
+
+                if (isValid == false)
+                    e.preventDefault();
 
 
-            $('.servicio').each(function () {
-                sum += Number($(this).val());
             });
 
 
-            $('#<%= TextBox48.ClientID %>').val(sum);
-
-          });
-        $('.agri').keyup(function () {
-
-            var sum = 0;
-
-
-            $('.agri').each(function () {
-                sum += Number($(this).val());
-            });
-
-
-            $('#<%= TextBox51.ClientID %>').val(sum);
-
-        });
-        $('.ope').keyup(function () {
-
-            var sum = 0;
-
-
-            $('.ope').each(function () {
-                sum += Number($(this).val());
-            });
-
-
-            $('#<%= TextBox54.ClientID %>').val(sum);
-
-        });
-
-        $('.opera').keyup(function () {
-
-            var sum = 0;
-
-
-            $('.opera').each(function () {
-                sum += Number($(this).val());
-            });
-
-
-            $('#<%= TextBox57.ClientID %>').val(sum);
-
-        });
-
-        $('.ele').keyup(function () {
-
-            var sum = 0;
-
-
-            $('.ele').each(function () {
-                sum += Number($(this).val());
-            });
-
-
-            $('#<%= TextBox60.ClientID %>').val(sum);
-
-          });
-    
-    
-</script>
+        }
+    </script>
 
 </asp:Content>

@@ -17,7 +17,7 @@ namespace Planeacion.Datos
       {
           DataSet ds = new DataSet();
           sqlcomm = new SqlCommand();
-          sqlcomm.Connection = sqlConn;
+          sqlcomm.Connection = ConexionAD.GET_CONEXION(); 
           using (sqlConn)
           {
               try
@@ -37,17 +37,18 @@ namespace Planeacion.Datos
            
               catch (Exception e)
               {
-                  Console.WriteLine("Error: " + e.Message);
+                  throw;
+                 
               }
           }
-          return ds;
+      
       }
 
        public DataSet fnObtenerRazonSocialAD()
       {
           DataSet ds = new DataSet();
           sqlcomm = new SqlCommand();
-          sqlcomm.Connection = sqlConn;
+          sqlcomm.Connection = ConexionAD.GET_CONEXION();
           using (sqlConn)
           {
               try
@@ -76,7 +77,7 @@ namespace Planeacion.Datos
       {
           DataSet ds = new DataSet();
           sqlcomm = new SqlCommand();
-          sqlcomm.Connection = sqlConn;
+          sqlcomm.Connection = ConexionAD.GET_CONEXION();
           using (sqlConn)
           {
               try
@@ -105,7 +106,7 @@ namespace Planeacion.Datos
       {
           DataSet ds = new DataSet();
           sqlcomm = new SqlCommand();
-          sqlcomm.Connection = sqlConn;
+          sqlcomm.Connection = ConexionAD.GET_CONEXION();
           using (sqlConn)
           {
               try
@@ -134,7 +135,7 @@ namespace Planeacion.Datos
       {
           DataSet ds = new DataSet();
           sqlcomm = new SqlCommand();
-          sqlcomm.Connection = sqlConn;
+          sqlcomm.Connection = ConexionAD.GET_CONEXION();
           using (sqlConn)
           {
               try
@@ -159,6 +160,96 @@ namespace Planeacion.Datos
           }
           return ds;
       }
-    
+      public DataSet fnObtenerMesAD()
+      {
+          DataSet ds = new DataSet();
+          sqlcomm = new SqlCommand();
+          sqlcomm.Connection = ConexionAD.GET_CONEXION();
+          using (sqlConn)
+          {
+              try
+              {
+                  using (SqlDataAdapter da = new SqlDataAdapter())
+                  {
+
+
+                      sqlcomm.CommandText = "sp_ObtenerMes";
+                      sqlcomm.CommandType = CommandType.StoredProcedure;
+                      da.SelectCommand = sqlcomm;
+                      da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                      da.Fill(ds);
+                      return ds;
+                  }
+              }
+
+              catch (Exception e)
+              {
+                  Console.WriteLine("Error: " + e.Message);
+              }
+          }
+          return ds;
+      }
+
+      public DataSet fnObteneAngoAD()
+      {
+          DataSet ds = new DataSet();
+          sqlcomm = new SqlCommand();
+          sqlcomm.Connection = ConexionAD.GET_CONEXION();
+          using (sqlConn)
+          {
+              try
+              {
+                  using (SqlDataAdapter da = new SqlDataAdapter())
+                  {
+
+
+                      sqlcomm.CommandText = "sp_ObtenerAngo";
+                      sqlcomm.CommandType = CommandType.StoredProcedure;
+                      da.SelectCommand = sqlcomm;
+                      da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                      da.Fill(ds);
+                      return ds;
+                  }
+              }
+
+              catch (Exception e)
+              {
+                  Console.WriteLine("Error: " + e.Message);
+              }
+          }
+          return ds;
+      }
+        public DataSet fnObteneEmpleadoAD()
+      {
+          DataSet ds = new DataSet();
+          sqlcomm = new SqlCommand();
+          sqlcomm.Connection = ConexionAD.GET_CONEXION();
+          using (sqlConn)
+          {
+              try
+              {
+                  using (SqlDataAdapter da = new SqlDataAdapter())
+                  {
+
+
+                      sqlcomm.CommandText = "sp_ObtenerEmpleados";
+                      sqlcomm.CommandType = CommandType.StoredProcedure;
+                      da.SelectCommand = sqlcomm;
+                      da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                      da.Fill(ds);
+                      return ds;
+                  }
+              }
+
+              catch (Exception e)
+              {
+                  Console.WriteLine("Error: " + e.Message);
+              }
+          }
+          return ds;
+      }
+   
+
+
     }
 }
