@@ -5,21 +5,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Master</title>
+
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <link href="css/styles.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="padding-left: 100px">
-            <asp:Label ID="Label1" runat="server" Text="Titulo Pagina" Style="font-size: xx-large; font-weight: 700; color: #3071B8"></asp:Label>
+        <div>
+            <div id='cssmenu'>
+                <ul>
+                    <li class="active"><a href="HtBoletaUI.aspx">Mantenimiento de Boletas</a></li>
+                    <li><a href="#">Mantenimiento detalles de Boleta</a></li>
+                    <li><a href="#">Menu 2</a></li>
+                    <li><a href="#">Menu 3</a></li>
+                </ul>
+            </div>
+            <asp:Label ID="Label1" runat="server" Text="Titulo Pagina" Style="font-size: xx-large; font-weight: 700; color: #3071B8; margin-left: 10%;"></asp:Label>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         </div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-
+        <div style="margin: auto;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
     </form>
 </body>
 </html>

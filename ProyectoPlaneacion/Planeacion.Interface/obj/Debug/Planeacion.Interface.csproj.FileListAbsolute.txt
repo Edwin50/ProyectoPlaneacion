@@ -31,3 +31,4 @@ C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interfac
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.csprojResolveAssemblyReference.cache
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.pdb
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\styles.css

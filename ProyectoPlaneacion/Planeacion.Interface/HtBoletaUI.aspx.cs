@@ -21,11 +21,16 @@ namespace Planeacion.Interface
         {
             try
             {
+                var dia = DateTime.Now;
+
                 this.TextBox32.Text = cambio.fnTipoCambioDolar();
                 this.TextBox32.ReadOnly = true;
                 if (!this.IsPostBack)
                 { // carga la pagina por primera vez
-
+                    TextBox26.Text = dia.ToString("dd/MM/yyyy hh:mm:ss");
+                    TextBox27.Text = dia.ToString("dd/MM/yyyy hh:mm:ss");
+                    TextBox29.Text = dia.ToString("dd/MM/yyyy hh:mm:ss");
+                    this.TextBox30.Text = dia.ToString("dd/MM/yyyy hh:mm:ss");
                     lpllenarCombos();
                     lpCargarGridEncabezado();
                 }
@@ -45,24 +50,27 @@ namespace Planeacion.Interface
 
         protected void ButtonAgregar_Click(object sender, EventArgs e)
         {
-             AgregarBoleta();
-             lpLimpiarBoleta();
+            AgregarBoleta();
+            lpCargarGridEncabezado();
+            lpLimpiarBoleta();
         }
 
         protected void ButtonModificar_Click(object sender, EventArgs e)
         {
             ActualizarBoleta();
+            lpCargarGridEncabezado();
             lpLimpiarBoleta();
         }
 
         protected void ButtonEliminar_Click(object sender, EventArgs e)
         {
             EliminarBoleta();
+            lpCargarGridEncabezado();
             lpLimpiarBoleta();
         }
         protected void bt_Cancel_Click(object sender, EventArgs e)
         {
-
+            lpCargarGridEncabezado();
             lpLimpiarBoleta();
         }
 
@@ -70,7 +78,6 @@ namespace Planeacion.Interface
         {
             try
             {
-               
 
                 int[] datosBoleta = new int[4];
 
@@ -97,7 +104,24 @@ namespace Planeacion.Interface
         #endregion
 
         #region "Metodos Locales"
+        private void lpCargarGridEncabezado()
+        {
 
+            try
+            {
+
+
+                GridView1.DataSource = gHtBoletaLN.BoletasPersonalizadaLN();
+                GridView1.DataBind();
+
+            }
+            catch (Exception ex)
+            {
+                this.Master.lpMensaje(this, ex.Message);
+
+            }
+
+        }
         private void lpCargarBoleta(HtBoleta lBoleta)
         {
             try
@@ -207,10 +231,10 @@ namespace Planeacion.Interface
 
             try
             {
-                TextBox2.Enabled=true;
+                TextBox2.Enabled = true;
                 TextBox3.Enabled = true;
-                DropDownListMes.Enabled=true;
-                DropDownListAngo.Enabled=true;
+                DropDownListMes.Enabled = true;
+                DropDownListAngo.Enabled = true;
                 this.ButtonAgregar.Visible = true;
                 this.ButtonModificar.Visible = false;
                 this.ButtonEliminar.Visible = false;
@@ -308,6 +332,12 @@ namespace Planeacion.Interface
                 TextBox91.Text = "";
                 TextBox92.Text = "";
                 TextBox93.Text = "";
+                var dia = DateTime.Now;
+
+                TextBox26.Text = dia.ToString("dd/MM/yyyy hh:mm:ss");
+                TextBox27.Text = dia.ToString("dd/MM/yyyy hh:mm:ss");
+                TextBox29.Text = dia.ToString("dd/MM/yyyy hh:mm:ss");
+                this.TextBox30.Text = dia.ToString("dd/MM/yyyy hh:mm:ss");
             }
             catch (Exception ex)
             {
@@ -321,102 +351,9 @@ namespace Planeacion.Interface
             {
 
                 HtBoleta lBoleta = new HtBoleta();
-                lBoleta.HtIdDistrito = int.Parse(this.DropDownListDistrito.SelectedValue);
-                lBoleta.HtConsecutivo = int.Parse(this.TextBox2.Text);
-                lBoleta.HtNumActividad = int.Parse(this.TextBox3.Text);
-                lBoleta.HtIdMes = int.Parse(this.DropDownListMes.SelectedValue);
-                lBoleta.HtAngo = int.Parse(this.DropDownListAngo.SelectedValue);
-                lBoleta.HtNumIdentificacionNegocio = this.TextBox6.Text;
-                lBoleta.HtNomNegocio = this.TextBox7.Text;
-                lBoleta.HtNomLegal = this.TextBox8.Text;
-                lBoleta.HtNumRazonSocial = int.Parse(this.DropDownListRazon.SelectedValue);
-                lBoleta.HtDirNegocio = this.TextBox10.Text;
-                lBoleta.HtTel1Negocio = int.Parse(this.TextBox11.Text);
-                lBoleta.HtExt1Negocio = int.Parse(this.TextBox12.Text);
-                lBoleta.HtEmail = this.TextBox13.Text;
-                lBoleta.HtCantidadTrabajadores = short.Parse(this.TextBox14.Text);
-                lBoleta.HtCantidadTrabajadoresHombres = short.Parse(this.TextBox15.Text);
-                lBoleta.HtCantidadTrabajadoresNujeres = short.Parse(this.TextBox16.Text);
-                lBoleta.HtDescCIIUProductoPrincipal = this.TextBox17.Text;
-                lBoleta.HtNumCiiu4 = this.DropDownListCIIU.SelectedValue;
-                lBoleta.HtNombreInformante = this.TextBox19.Text;
-                lBoleta.HtCargoDelInformante = this.TextBox20.Text;
-                lBoleta.HtTelefonoInformante = int.Parse(this.TextBox21.Text);
-                lBoleta.HtEmailInformante = this.TextBox22.Text;
-                lBoleta.HtIdResultadoEntrevista = int.Parse(this.DropDownListEntrevista.SelectedValue);
-                lBoleta.HtObservaciones = this.TextBox24.Text;
-                lBoleta.HtIdEmpleado = int.Parse(this.DropDownListEmpleado.SelectedValue);
-                lBoleta.HtHoraInicio = DateTime.Parse(this.TextBox26.Text);
-                lBoleta.HtHoraFinal = DateTime.Parse(this.TextBox27.Text);
-                lBoleta.HtDuracionEntrevista = this.TextBox28.Text;
-                lBoleta.HtFechaEntrevista = DateTime.Parse(this.TextBox29.Text);
-                lBoleta.HtFechaUltimaModificacion = DateTime.Parse(this.TextBox30.Text);
-                lBoleta.HtIntentosEntrevista = short.Parse(this.TextBox31.Text);
-                lBoleta.HtTipoDeCambio = short.Parse(cambio.fnTipoCambioDolar());
-                lBoleta.HtIdTipoMoneda = int.Parse(this.DropDownListMoneda.SelectedValue);
-                lBoleta.HtTotalDirectivosMujer = int.Parse(this.TextBox34.Text);
-                lBoleta.HtTotalDirectivosHombre = int.Parse(this.TextBox35.Text);
-                lBoleta.HtTotalDirectivos = int.Parse(this.TextBox36.Text);
-                lBoleta.HtTotalProfesionalesMujer = int.Parse(this.TextBox37.Text);
-                lBoleta.HtTotalProfesionalesHombre = int.Parse(this.TextBox38.Text);
-                lBoleta.HtTotalProfesionales = int.Parse(this.TextBox39.Text);
-                lBoleta.HtTotalTecnicosMujer = int.Parse(this.TextBox40.Text);
-                lBoleta.HtTotalTecnicosHombre = int.Parse(this.TextBox41.Text);
-                lBoleta.HtTotalTecnicos = int.Parse(this.TextBox42.Text);
-                lBoleta.HtTotalApoyoAdminMujer = int.Parse(this.TextBox43.Text);
-                lBoleta.HtTotalApoyoAdminHombre = int.Parse(this.TextBox44.Text);
-                lBoleta.HtTotalApoyoAdmin = int.Parse(this.TextBox45.Text);
-                lBoleta.HtTotalServiciosMujer = int.Parse(this.TextBox46.Text);
-                lBoleta.HtTotalServiciosHombre = int.Parse(this.TextBox47.Text);
-                lBoleta.HtTotalServicios = int.Parse(this.TextBox48.Text);
-                lBoleta.HtTotalAgricultoresMujer = int.Parse(this.TextBox49.Text);
-                lBoleta.HtTotalAgricultoresHombre = int.Parse(this.TextBox50.Text);
-                lBoleta.HtTotalAgricultores = int.Parse(this.TextBox51.Text);
-                lBoleta.HtTotalOperariosMujer = int.Parse(this.TextBox52.Text);
-                lBoleta.HtTotalOperariosHombre = int.Parse(this.TextBox53.Text);
-                lBoleta.HtTotalOperarios = int.Parse(this.TextBox54.Text);
-                lBoleta.HtTotalOperadoresMujer = int.Parse(this.TextBox55.Text);
-                lBoleta.HtTotalOperadoresHombre = int.Parse(this.TextBox56.Text);
-                lBoleta.HtTotalOperadores = int.Parse(this.TextBox57.Text);
-                lBoleta.HtTotalOcupElementalesMujer = int.Parse(this.TextBox58.Text);
-                lBoleta.HtTotalOcupElementalesHombre = int.Parse(this.TextBox59.Text);
-                lBoleta.HtTotalOcupElementales = int.Parse(this.TextBox60.Text);
-                lBoleta.HtSalarioBaseTotal = int.Parse(this.TextBox61.Text);
-                lBoleta.HtSalEspecieTotal = int.Parse(this.TextBox62.Text);
-                lBoleta.HtPagoHrsExtraTotal = int.Parse(this.TextBox63.Text);
-                lBoleta.HtAguinaldoTotal = int.Parse(this.TextBox64.Text);
-                lBoleta.HtSalEscolarTotal = int.Parse(this.TextBox65.Text);
-                lBoleta.HtRemuneracionesTotal = int.Parse(this.TextBox66.Text);
-                lBoleta.HtTotalCostoDirectivos = int.Parse(this.TextBox67.Text);
-                lBoleta.HtTotalCostoProfecionales = int.Parse(this.TextBox68.Text);
-                lBoleta.HtTotalCostoTecnicos = int.Parse(this.TextBox69.Text);
-                lBoleta.HtTotalCostoApoyoAdmin = int.Parse(this.TextBox70.Text);
-                lBoleta.HtTotalCostoServicios = int.Parse(this.TextBox71.Text);
-                lBoleta.HtTotalCostoAgricultores = int.Parse(this.TextBox72.Text);
-                lBoleta.HtTotalCostoOperarios = int.Parse(this.TextBox73.Text);
-                lBoleta.HtTotalCostoOperadores = int.Parse(this.TextBox74.Text);
-                lBoleta.HtTotalCostoOcupElementales = int.Parse(this.TextBox75.Text);
-                lBoleta.HtTotalCosto = int.Parse(this.TextBox76.Text);
-                lBoleta.HtDeducccionTotal = int.Parse(this.TextBox77.Text);
-                lBoleta.HtTotalHorasDerectivos = int.Parse(this.TextBox78.Text);
-                lBoleta.HtTotalHorasProfecionales = int.Parse(this.TextBox79.Text);
-                lBoleta.HtTotalHorasTecnicos = int.Parse(this.TextBox80.Text);
-                lBoleta.HtTotalHorasApoyoAdmin = int.Parse(this.TextBox81.Text);
-                lBoleta.HtTotalHorasServicios = int.Parse(this.TextBox82.Text);
-                lBoleta.HtTotalHorasAgricultores = int.Parse(this.TextBox83.Text);
-                lBoleta.HtTotalHorasOperarios = int.Parse(this.TextBox84.Text);
-                lBoleta.HtTotalHorasOperadores = int.Parse(this.TextBox85.Text);
-                lBoleta.HtTotalHorasOcupElementales = int.Parse(this.TextBox86.Text);
-                lBoleta.HtTotalHorasOrdinarias = int.Parse(this.TextBox87.Text);
-                lBoleta.HtTotalHorasExtra = int.Parse(this.TextBox88.Text);
-                lBoleta.HtTotalHoras = int.Parse(this.TextBox89.Text);
-                lBoleta.HtTotalOutsourcing = int.Parse(this.TextBox90.Text);
-                lBoleta.HtTotalOutsourcingMujer = int.Parse(this.TextBox91.Text);
-                lBoleta.HtTotalOutsourcingHombre = int.Parse(this.TextBox92.Text);
-                lBoleta.HtIdEntrevistador = int.Parse(this.TextBox93.Text);
-
+                lBoleta = lpllenarBoleta(lBoleta);
                 gHtBoletaLN.RUDBoletasLN(lBoleta, 3);
-
+                this.Master.lpMensaje(this, "Boleta Eliminada");
             }
             catch (Exception ex)
             {
@@ -432,102 +369,9 @@ namespace Planeacion.Interface
             {
 
                 HtBoleta lBoleta = new HtBoleta();
-                lBoleta.HtIdDistrito = int.Parse(this.DropDownListDistrito.SelectedValue);
-                lBoleta.HtConsecutivo = int.Parse(this.TextBox2.Text);
-                lBoleta.HtNumActividad = int.Parse(this.TextBox3.Text);
-                lBoleta.HtIdMes = int.Parse(this.DropDownListMes.SelectedValue);
-                lBoleta.HtAngo = int.Parse(this.DropDownListAngo.SelectedValue);
-                lBoleta.HtNumIdentificacionNegocio = this.TextBox6.Text;
-                lBoleta.HtNomNegocio = this.TextBox7.Text;
-                lBoleta.HtNomLegal = this.TextBox8.Text;
-                lBoleta.HtNumRazonSocial = int.Parse(this.DropDownListRazon.SelectedValue);
-                lBoleta.HtDirNegocio = this.TextBox10.Text;
-                lBoleta.HtTel1Negocio = int.Parse(this.TextBox11.Text);
-                lBoleta.HtExt1Negocio = int.Parse(this.TextBox12.Text);
-                lBoleta.HtEmail = this.TextBox13.Text;
-                lBoleta.HtCantidadTrabajadores = short.Parse(this.TextBox14.Text);
-                lBoleta.HtCantidadTrabajadoresHombres = short.Parse(this.TextBox15.Text);
-                lBoleta.HtCantidadTrabajadoresNujeres = short.Parse(this.TextBox16.Text);
-                lBoleta.HtDescCIIUProductoPrincipal = this.TextBox17.Text;
-                lBoleta.HtNumCiiu4 = this.DropDownListCIIU.SelectedValue;
-                lBoleta.HtNombreInformante = this.TextBox19.Text;
-                lBoleta.HtCargoDelInformante = this.TextBox20.Text;
-                lBoleta.HtTelefonoInformante = int.Parse(this.TextBox21.Text);
-                lBoleta.HtEmailInformante = this.TextBox22.Text;
-                lBoleta.HtIdResultadoEntrevista = int.Parse(this.DropDownListEntrevista.SelectedValue);
-                lBoleta.HtObservaciones = this.TextBox24.Text;
-                lBoleta.HtIdEmpleado = int.Parse(this.DropDownListEmpleado.SelectedValue);
-                lBoleta.HtHoraInicio = DateTime.Parse(this.TextBox26.Text);
-                lBoleta.HtHoraFinal = DateTime.Parse(this.TextBox27.Text);
-                lBoleta.HtDuracionEntrevista = this.TextBox28.Text;
-                lBoleta.HtFechaEntrevista = DateTime.Parse(this.TextBox29.Text);
-                lBoleta.HtFechaUltimaModificacion = DateTime.Parse(this.TextBox30.Text);
-                lBoleta.HtIntentosEntrevista = short.Parse(this.TextBox31.Text);
-                lBoleta.HtTipoDeCambio = short.Parse(cambio.fnTipoCambioDolar());
-                lBoleta.HtIdTipoMoneda = int.Parse(this.DropDownListMoneda.SelectedValue);
-                lBoleta.HtTotalDirectivosMujer = int.Parse(this.TextBox34.Text);
-                lBoleta.HtTotalDirectivosHombre = int.Parse(this.TextBox35.Text);
-                lBoleta.HtTotalDirectivos = int.Parse(this.TextBox36.Text);
-                lBoleta.HtTotalProfesionalesMujer = int.Parse(this.TextBox37.Text);
-                lBoleta.HtTotalProfesionalesHombre = int.Parse(this.TextBox38.Text);
-                lBoleta.HtTotalProfesionales = int.Parse(this.TextBox39.Text);
-                lBoleta.HtTotalTecnicosMujer = int.Parse(this.TextBox40.Text);
-                lBoleta.HtTotalTecnicosHombre = int.Parse(this.TextBox41.Text);
-                lBoleta.HtTotalTecnicos = int.Parse(this.TextBox42.Text);
-                lBoleta.HtTotalApoyoAdminMujer = int.Parse(this.TextBox43.Text);
-                lBoleta.HtTotalApoyoAdminHombre = int.Parse(this.TextBox44.Text);
-                lBoleta.HtTotalApoyoAdmin = int.Parse(this.TextBox45.Text);
-                lBoleta.HtTotalServiciosMujer = int.Parse(this.TextBox46.Text);
-                lBoleta.HtTotalServiciosHombre = int.Parse(this.TextBox47.Text);
-                lBoleta.HtTotalServicios = int.Parse(this.TextBox48.Text);
-                lBoleta.HtTotalAgricultoresMujer = int.Parse(this.TextBox49.Text);
-                lBoleta.HtTotalAgricultoresHombre = int.Parse(this.TextBox50.Text);
-                lBoleta.HtTotalAgricultores = int.Parse(this.TextBox51.Text);
-                lBoleta.HtTotalOperariosMujer = int.Parse(this.TextBox52.Text);
-                lBoleta.HtTotalOperariosHombre = int.Parse(this.TextBox53.Text);
-                lBoleta.HtTotalOperarios = int.Parse(this.TextBox54.Text);
-                lBoleta.HtTotalOperadoresMujer = int.Parse(this.TextBox55.Text);
-                lBoleta.HtTotalOperadoresHombre = int.Parse(this.TextBox56.Text);
-                lBoleta.HtTotalOperadores = int.Parse(this.TextBox57.Text);
-                lBoleta.HtTotalOcupElementalesMujer = int.Parse(this.TextBox58.Text);
-                lBoleta.HtTotalOcupElementalesHombre = int.Parse(this.TextBox59.Text);
-                lBoleta.HtTotalOcupElementales = int.Parse(this.TextBox60.Text);
-                lBoleta.HtSalarioBaseTotal = int.Parse(this.TextBox61.Text);
-                lBoleta.HtSalEspecieTotal = int.Parse(this.TextBox62.Text);
-                lBoleta.HtPagoHrsExtraTotal = int.Parse(this.TextBox63.Text);
-                lBoleta.HtAguinaldoTotal = int.Parse(this.TextBox64.Text);
-                lBoleta.HtSalEscolarTotal = int.Parse(this.TextBox65.Text);
-                lBoleta.HtRemuneracionesTotal = int.Parse(this.TextBox66.Text);
-                lBoleta.HtTotalCostoDirectivos = int.Parse(this.TextBox67.Text);
-                lBoleta.HtTotalCostoProfecionales = int.Parse(this.TextBox68.Text);
-                lBoleta.HtTotalCostoTecnicos = int.Parse(this.TextBox69.Text);
-                lBoleta.HtTotalCostoApoyoAdmin = int.Parse(this.TextBox70.Text);
-                lBoleta.HtTotalCostoServicios = int.Parse(this.TextBox71.Text);
-                lBoleta.HtTotalCostoAgricultores = int.Parse(this.TextBox72.Text);
-                lBoleta.HtTotalCostoOperarios = int.Parse(this.TextBox73.Text);
-                lBoleta.HtTotalCostoOperadores = int.Parse(this.TextBox74.Text);
-                lBoleta.HtTotalCostoOcupElementales = int.Parse(this.TextBox75.Text);
-                lBoleta.HtTotalCosto = int.Parse(this.TextBox76.Text);
-                lBoleta.HtDeducccionTotal = int.Parse(this.TextBox77.Text);
-                lBoleta.HtTotalHorasDerectivos = int.Parse(this.TextBox78.Text);
-                lBoleta.HtTotalHorasProfecionales = int.Parse(this.TextBox79.Text);
-                lBoleta.HtTotalHorasTecnicos = int.Parse(this.TextBox80.Text);
-                lBoleta.HtTotalHorasApoyoAdmin = int.Parse(this.TextBox81.Text);
-                lBoleta.HtTotalHorasServicios = int.Parse(this.TextBox82.Text);
-                lBoleta.HtTotalHorasAgricultores = int.Parse(this.TextBox83.Text);
-                lBoleta.HtTotalHorasOperarios = int.Parse(this.TextBox84.Text);
-                lBoleta.HtTotalHorasOperadores = int.Parse(this.TextBox85.Text);
-                lBoleta.HtTotalHorasOcupElementales = int.Parse(this.TextBox86.Text);
-                lBoleta.HtTotalHorasOrdinarias = int.Parse(this.TextBox87.Text);
-                lBoleta.HtTotalHorasExtra = int.Parse(this.TextBox88.Text);
-                lBoleta.HtTotalHoras = int.Parse(this.TextBox89.Text);
-                lBoleta.HtTotalOutsourcing = int.Parse(this.TextBox90.Text);
-                lBoleta.HtTotalOutsourcingMujer = int.Parse(this.TextBox91.Text);
-                lBoleta.HtTotalOutsourcingHombre = int.Parse(this.TextBox92.Text);
-                lBoleta.HtIdEntrevistador = int.Parse(this.TextBox93.Text);
-
+                lBoleta = lpllenarBoleta(lBoleta);
                 gHtBoletaLN.RUDBoletasLN(lBoleta, 2);
-
+                this.Master.lpMensaje(this, "Boleta Modificada");
             }
             catch (Exception ex)
             {
@@ -543,7 +387,21 @@ namespace Planeacion.Interface
             {
 
                 HtBoleta lBoleta = new HtBoleta();
-                lBoleta.HtIdDistrito = int.Parse(this.DropDownListDistrito.SelectedValue);
+                lBoleta = lpllenarBoleta(lBoleta);
+                gHtBoletaLN.RUDBoletasLN(lBoleta, 1);
+                this.Master.lpMensaje(this, "Boleta Agregada");
+            }
+            catch (Exception ex)
+            {
+                this.Master.lpMensaje(this, ex.Message);
+            }
+
+
+
+        }
+
+        private HtBoleta lpllenarBoleta(HtBoleta lBoleta) {
+            lBoleta.HtIdDistrito = int.Parse(this.DropDownListDistrito.SelectedValue);
                 lBoleta.HtConsecutivo = int.Parse(this.TextBox2.Text);
                 lBoleta.HtNumActividad = int.Parse(this.TextBox3.Text);
                 lBoleta.HtIdMes = int.Parse(this.DropDownListMes.SelectedValue);
@@ -556,9 +414,9 @@ namespace Planeacion.Interface
                 lBoleta.HtTel1Negocio = int.Parse(this.TextBox11.Text);
                 lBoleta.HtExt1Negocio = int.Parse(this.TextBox12.Text);
                 lBoleta.HtEmail = this.TextBox13.Text;
-                lBoleta.HtCantidadTrabajadores = short.Parse(this.TextBox14.Text);
                 lBoleta.HtCantidadTrabajadoresHombres = short.Parse(this.TextBox15.Text);
                 lBoleta.HtCantidadTrabajadoresNujeres = short.Parse(this.TextBox16.Text);
+                lBoleta.HtCantidadTrabajadores = (short)(lBoleta.HtCantidadTrabajadoresHombres + lBoleta.HtCantidadTrabajadoresNujeres);
                 lBoleta.HtDescCIIUProductoPrincipal = this.TextBox17.Text;
                 lBoleta.HtNumCiiu4 = this.DropDownListCIIU.SelectedValue;
                 lBoleta.HtNombreInformante = this.TextBox19.Text;
@@ -574,35 +432,37 @@ namespace Planeacion.Interface
                 lBoleta.HtFechaEntrevista = DateTime.Parse(this.TextBox29.Text);
                 lBoleta.HtFechaUltimaModificacion = DateTime.Parse(this.TextBox30.Text);
                 lBoleta.HtIntentosEntrevista = short.Parse(this.TextBox31.Text);
-                lBoleta.HtTipoDeCambio = short.Parse(cambio.fnTipoCambioDolar());
+
+                String[] dolar = cambio.fnTipoCambioDolar().Split(','); 
+                lBoleta.HtTipoDeCambio = short.Parse(dolar[0]);
                 lBoleta.HtIdTipoMoneda = int.Parse(this.DropDownListMoneda.SelectedValue);
                 lBoleta.HtTotalDirectivosMujer = int.Parse(this.TextBox34.Text);
                 lBoleta.HtTotalDirectivosHombre = int.Parse(this.TextBox35.Text);
-                lBoleta.HtTotalDirectivos = int.Parse(this.TextBox36.Text);
+                lBoleta.HtTotalDirectivos =  lBoleta.HtTotalDirectivosMujer + lBoleta.HtTotalDirectivosHombre; 
                 lBoleta.HtTotalProfesionalesMujer = int.Parse(this.TextBox37.Text);
                 lBoleta.HtTotalProfesionalesHombre = int.Parse(this.TextBox38.Text);
-                lBoleta.HtTotalProfesionales = int.Parse(this.TextBox39.Text);
+                lBoleta.HtTotalProfesionales =  lBoleta.HtTotalProfesionalesMujer +  lBoleta.HtTotalProfesionalesHombre;
                 lBoleta.HtTotalTecnicosMujer = int.Parse(this.TextBox40.Text);
                 lBoleta.HtTotalTecnicosHombre = int.Parse(this.TextBox41.Text);
-                lBoleta.HtTotalTecnicos = int.Parse(this.TextBox42.Text);
+                lBoleta.HtTotalTecnicos =  lBoleta.HtTotalTecnicosMujer  +  lBoleta.HtTotalTecnicosHombre;
                 lBoleta.HtTotalApoyoAdminMujer = int.Parse(this.TextBox43.Text);
                 lBoleta.HtTotalApoyoAdminHombre = int.Parse(this.TextBox44.Text);
-                lBoleta.HtTotalApoyoAdmin = int.Parse(this.TextBox45.Text);
+                lBoleta.HtTotalApoyoAdmin =  lBoleta.HtTotalApoyoAdminMujer+  lBoleta.HtTotalApoyoAdminHombre;
                 lBoleta.HtTotalServiciosMujer = int.Parse(this.TextBox46.Text);
                 lBoleta.HtTotalServiciosHombre = int.Parse(this.TextBox47.Text);
-                lBoleta.HtTotalServicios = int.Parse(this.TextBox48.Text);
+                lBoleta.HtTotalServicios =  lBoleta.HtTotalServiciosMujer+  lBoleta.HtTotalServiciosHombre;
                 lBoleta.HtTotalAgricultoresMujer = int.Parse(this.TextBox49.Text);
                 lBoleta.HtTotalAgricultoresHombre = int.Parse(this.TextBox50.Text);
-                lBoleta.HtTotalAgricultores = int.Parse(this.TextBox51.Text);
+                lBoleta.HtTotalAgricultores = lBoleta.HtTotalAgricultoresMujer+ lBoleta.HtTotalAgricultoresHombre;
                 lBoleta.HtTotalOperariosMujer = int.Parse(this.TextBox52.Text);
                 lBoleta.HtTotalOperariosHombre = int.Parse(this.TextBox53.Text);
-                lBoleta.HtTotalOperarios = int.Parse(this.TextBox54.Text);
+                lBoleta.HtTotalOperarios =  lBoleta.HtTotalOperariosMujer+  lBoleta.HtTotalOperariosHombre;
                 lBoleta.HtTotalOperadoresMujer = int.Parse(this.TextBox55.Text);
                 lBoleta.HtTotalOperadoresHombre = int.Parse(this.TextBox56.Text);
-                lBoleta.HtTotalOperadores = int.Parse(this.TextBox57.Text);
+                lBoleta.HtTotalOperadores = lBoleta.HtTotalOperadoresMujer+ lBoleta.HtTotalOperadoresHombre;
                 lBoleta.HtTotalOcupElementalesMujer = int.Parse(this.TextBox58.Text);
                 lBoleta.HtTotalOcupElementalesHombre = int.Parse(this.TextBox59.Text);
-                lBoleta.HtTotalOcupElementales = int.Parse(this.TextBox60.Text);
+                lBoleta.HtTotalOcupElementales =  lBoleta.HtTotalOcupElementalesMujer+  lBoleta.HtTotalOcupElementalesHombre;
                 lBoleta.HtSalarioBaseTotal = int.Parse(this.TextBox61.Text);
                 lBoleta.HtSalEspecieTotal = int.Parse(this.TextBox62.Text);
                 lBoleta.HtPagoHrsExtraTotal = int.Parse(this.TextBox63.Text);
@@ -618,7 +478,15 @@ namespace Planeacion.Interface
                 lBoleta.HtTotalCostoOperarios = int.Parse(this.TextBox73.Text);
                 lBoleta.HtTotalCostoOperadores = int.Parse(this.TextBox74.Text);
                 lBoleta.HtTotalCostoOcupElementales = int.Parse(this.TextBox75.Text);
-                lBoleta.HtTotalCosto = int.Parse(this.TextBox76.Text);
+                lBoleta.HtTotalCosto = (  lBoleta.HtTotalCostoDirectivos +
+                lBoleta.HtTotalCostoProfecionales +
+                lBoleta.HtTotalCostoTecnicos +
+                lBoleta.HtTotalCostoApoyoAdmin +
+                lBoleta.HtTotalCostoServicios +
+                lBoleta.HtTotalCostoAgricultores +
+                lBoleta.HtTotalCostoOperarios +
+                lBoleta.HtTotalCostoOperadores +
+                lBoleta.HtTotalCostoOcupElementales );
                 lBoleta.HtDeducccionTotal = int.Parse(this.TextBox77.Text);
                 lBoleta.HtTotalHorasDerectivos = int.Parse(this.TextBox78.Text);
                 lBoleta.HtTotalHorasProfecionales = int.Parse(this.TextBox79.Text);
@@ -631,22 +499,23 @@ namespace Planeacion.Interface
                 lBoleta.HtTotalHorasOcupElementales = int.Parse(this.TextBox86.Text);
                 lBoleta.HtTotalHorasOrdinarias = int.Parse(this.TextBox87.Text);
                 lBoleta.HtTotalHorasExtra = int.Parse(this.TextBox88.Text);
-                lBoleta.HtTotalHoras = int.Parse(this.TextBox89.Text);
-                lBoleta.HtTotalOutsourcing = int.Parse(this.TextBox90.Text);
+                lBoleta.HtTotalHoras = (lBoleta.HtTotalHorasDerectivos +
+                lBoleta.HtTotalHorasProfecionales +
+                lBoleta.HtTotalHorasTecnicos +
+                lBoleta.HtTotalHorasApoyoAdmin +
+                lBoleta.HtTotalHorasServicios +
+                lBoleta.HtTotalHorasAgricultores +
+                lBoleta.HtTotalHorasOperarios +
+                lBoleta.HtTotalHorasOperadores +
+                lBoleta.HtTotalHorasOcupElementales +
+                lBoleta.HtTotalHorasOrdinarias +
+                lBoleta.HtTotalHorasExtra );
                 lBoleta.HtTotalOutsourcingMujer = int.Parse(this.TextBox91.Text);
                 lBoleta.HtTotalOutsourcingHombre = int.Parse(this.TextBox92.Text);
+            lBoleta.HtTotalOutsourcing =  lBoleta.HtTotalOutsourcingMujer +
+                lBoleta.HtTotalOutsourcingHombre ;
                 lBoleta.HtIdEntrevistador = int.Parse(this.TextBox93.Text);
-
-                gHtBoletaLN.RUDBoletasLN(lBoleta, 1);
-
-            }
-            catch (Exception ex)
-            {
-                this.Master.lpMensaje(this, ex.Message);
-            }
-
-
-
+            return lBoleta;
         }
         #endregion
 
@@ -666,6 +535,7 @@ namespace Planeacion.Interface
                 lpLlenarComboAngo();
 
                 this.TextBox2.Text = "" + dg.fnObteneConsecutivoLN();
+                this.TextBox3.Text = "" + dg.fnObteneConsecutivoLN();
             }
             catch (Exception ex)
             {
@@ -825,22 +695,8 @@ namespace Planeacion.Interface
 
         #endregion
 
-        private void lpCargarGridEncabezado() {
 
-            try { 
-                
-                
-               GridView1.DataSource=gHtBoletaLN.BoletasPersonalizadaLN();
-                GridView1.DataBind();
-            
-            }
-            catch (Exception ex) {
-                this.Master.lpMensaje(this,ex.Message);
-           
-            }
-            
-            }
-        
-  
+
+
     }
 }

@@ -31,6 +31,15 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
+        /// Control UpdatePanel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        
+        /// <summary>
         /// Control Panel1.
         /// </summary>
         /// <remarks>
@@ -337,6 +346,15 @@ namespace Planeacion.Interface {
         protected global::System.Web.UI.WebControls.TextBox TextBox13;
         
         /// <summary>
+        /// Control regexEmailValid1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid1;
+        
+        /// <summary>
         /// Control Label16.
         /// </summary>
         /// <remarks>
@@ -542,6 +560,15 @@ namespace Planeacion.Interface {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox22;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
         /// Control Label23.
@@ -758,6 +785,24 @@ namespace Planeacion.Interface {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox30;
+        
+        /// <summary>
+        /// Control CalendarExtender4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender4;
+        
+        /// <summary>
+        /// Control MaskedEditExtender4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender4;
         
         /// <summary>
         /// Control Label31.
@@ -2380,31 +2425,31 @@ namespace Planeacion.Interface {
         protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender65;
         
         /// <summary>
-        /// Control Label90.
+        /// Control Label93.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label90;
+        protected global::System.Web.UI.WebControls.Label Label93;
         
         /// <summary>
-        /// Control TextBox90.
+        /// Control TextBox93.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox90;
+        protected global::System.Web.UI.WebControls.TextBox TextBox93;
         
         /// <summary>
-        /// Control FilteredTextBoxExtender66.
+        /// Control FilteredTextBoxExtender69.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender66;
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender69;
         
         /// <summary>
         /// Control Label91.
@@ -2461,31 +2506,31 @@ namespace Planeacion.Interface {
         protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender68;
         
         /// <summary>
-        /// Control Label93.
+        /// Control Label90.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label93;
+        protected global::System.Web.UI.WebControls.Label Label90;
         
         /// <summary>
-        /// Control TextBox93.
+        /// Control TextBox90.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox93;
+        protected global::System.Web.UI.WebControls.TextBox TextBox90;
         
         /// <summary>
-        /// Control FilteredTextBoxExtender69.
+        /// Control FilteredTextBoxExtender66.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender69;
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender66;
         
         /// <summary>
         /// Control ButtonAgregar.

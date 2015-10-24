@@ -17,6 +17,10 @@
                 </div>
             </div>
 
+                  </ContentTemplate>
+    </asp:UpdatePanel>
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Always">
+        <ContentTemplate>
             <%--  Style="display: none;" --%>
             <asp:Panel ID="Panel1" runat="server">
                 <asp:Label ID="Label94" runat="server" Text="Boleta" Style="font-size: xx-large; font-weight: 700; color: #3366FF"></asp:Label>
@@ -28,6 +32,7 @@
                             FadeTransitions="true"
                             FramesPerSecond="40"
                             TransitionDuration="250"
+                             RequireOpenedPane="false"
                             AutoSize="None" Width="100%" Height="100%">
 
                             <Panes>
@@ -108,6 +113,7 @@
                                                 <td>
                                                     <asp:Label ID="Label13" runat="server" Text="Email"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox13" runat="server" MaxLength="50" TextMode="Email"></asp:TextBox><br />
+                                                    <asp:RegularExpressionValidator ID="regexEmailValid1" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="TextBox13" ErrorMessage="Formato de Email invalido"></asp:RegularExpressionValidator>
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label16" runat="server" Text="CantidadTrabajadoresMujeres"></asp:Label><br />
@@ -171,6 +177,7 @@
                                                 <td>
                                                     <asp:Label ID="Label22" runat="server" Text="EmailInformante"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox22" runat="server" TextMode="Email" MaxLength="50"></asp:TextBox><br />
+                                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="TextBox22" ErrorMessage="Formato de Email invalido"></asp:RegularExpressionValidator>
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label23" runat="server" Text="IdResultadoEntrevista"></asp:Label><br />
@@ -214,14 +221,14 @@
 
                                                     <asp:Label ID="Label26" runat="server" Text="HoraInicio"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox26" runat="server"></asp:TextBox><br />
-                                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox26" Format="hh:mm:ss" />
-                                                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender1" runat="server" TargetControlID="TextBox26" Mask="99:99:99" MaskType="Time" />
+                                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox26" Format="dd/MM/yyyy hh:mm:ss" />
+                                                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender1" runat="server" TargetControlID="TextBox26" Mask="99/99/9999 99:99:99" MaskType="DateTime" ClearMaskOnLostFocus="false"/>
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label27" runat="server" Text="HoraFinal"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox27" runat="server"></asp:TextBox><br />
-                                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox27" Format="hh:mm:ss" />
-                                                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender2" runat="server" TargetControlID="TextBox27" Mask="99:99:99" MaskType="Time" />
+                                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox27" Format="dd/MM/yyyy hh:mm:ss" />
+                                                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender2" runat="server" TargetControlID="TextBox27" Mask="99/99/9999 99:99:99" MaskType="DateTime" ClearMaskOnLostFocus="false"/>
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label28" runat="server" Text="DuracionEntrevista"></asp:Label><br />
@@ -231,8 +238,8 @@
                                                 <td>
                                                     <asp:Label ID="Label29" runat="server" Text="FechaEntrevista"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox29" runat="server"></asp:TextBox><br />
-                                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender3" runat="server" TargetControlID="TextBox29" Format="HH:mm:ss" />
-                                                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender3" runat="server" TargetControlID="TextBox29" Mask="99:99:99" MaskType="Time" />
+                                                    <ajaxToolkit:CalendarExtender ID="CalendarExtender3" runat="server" TargetControlID="TextBox29" Format="dd/MM/yyyy hh:mm:ss" />
+                                                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender3" runat="server" TargetControlID="TextBox29" Mask="99/99/9999 99:99:99" MaskType="DateTime" ClearMaskOnLostFocus="false"/>
 
                                                 </td>
                                             </tr>
@@ -240,6 +247,8 @@
 
                                                 <asp:Label ID="Label30" runat="server" Text="FechaUltimaModificacion" Visible="false"></asp:Label><br />
                                                 <asp:TextBox ID="TextBox30" runat="server" Visible="false"></asp:TextBox><br />
+                                                 <ajaxToolkit:CalendarExtender ID="CalendarExtender4" runat="server" TargetControlID="TextBox30" Format="dd/MM/yyyy hh:mm:ss" />
+                                                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender4" runat="server" TargetControlID="TextBox30" Mask="99/99/9999 99:99:99" MaskType="DateTime" ClearMaskOnLostFocus="false" />
 
 
                                                 <td>
@@ -547,71 +556,74 @@
 
                                                 <td>
                                                     <asp:Label ID="Label67" runat="server" Text="TotalCostoDirectivos"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox67" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox67" runat="server" CssClass="TotalCosto"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender43" runat="server" TargetControlID="TextBox67" FilterType="Numbers" />
 
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label68" runat="server" Text="TotalCostoProfecionales"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox68" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox68" runat="server" CssClass="TotalCosto"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender44" runat="server" TargetControlID="TextBox68" FilterType="Numbers" />
 
                                                 </td>
 
                                                 <td>
                                                     <asp:Label ID="Label69" runat="server" Text="TotalCostoTecnicos"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox69" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox69" runat="server" CssClass="TotalCosto"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender45" runat="server" TargetControlID="TextBox69" FilterType="Numbers" />
 
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label70" runat="server" Text="TotalCostoApoyoAdmin"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox70" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox70" runat="server" CssClass="TotalCosto"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender46" runat="server" TargetControlID="TextBox70" FilterType="Numbers" />
 
                                                 </td>
-                                            </tr>
-                                            <tr>
+                                           
 
                                                 <td>
                                                     <asp:Label ID="Label71" runat="server" Text="TotalCostoServicios"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox71" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox71" runat="server" CssClass="TotalCosto"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender47" runat="server" TargetControlID="TextBox71" FilterType="Numbers" />
 
                                                 </td>
+
+                                                 </tr>
+                                            <tr>
                                                 <td>
                                                     <asp:Label ID="Label72" runat="server" Text="TotalCostoAgricultores"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox72" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox72" runat="server" CssClass="TotalCosto"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender48" runat="server" TargetControlID="TextBox72" FilterType="Numbers" />
 
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label73" runat="server" Text="TotalCostoOperarios"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox73" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox73" runat="server" CssClass="TotalCosto"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender49" runat="server" TargetControlID="TextBox73" FilterType="Numbers" />
 
                                                 </td>
 
                                                 <td>
                                                     <asp:Label ID="Label74" runat="server" Text="TotalCostoOperadores"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox74" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox74" runat="server" CssClass="TotalCosto"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender50" runat="server" TargetControlID="TextBox74" FilterType="Numbers" />
 
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label75" runat="server" Text="TotalCostoOcupElementales"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox75" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox75" runat="server" CssClass="TotalCosto"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender51" runat="server" TargetControlID="TextBox75" FilterType="Numbers" />
 
                                                 </td>
-                                            </tr>
-                                            <tr>
+                                            
                                                 <td>
                                                     <asp:Label ID="Label76" runat="server" Text="TotalCosto"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox76" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox76" runat="server" ReadOnly="true"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender52" runat="server" TargetControlID="TextBox76" FilterType="Numbers" />
 
                                                 </td>
+                                                </tr>
+                                            <tr>
                                                 <td>
                                                     <asp:Label ID="Label77" runat="server" Text="DeducccionTotal"></asp:Label><br />
                                                     <asp:TextBox ID="TextBox77" runat="server"></asp:TextBox><br />
@@ -620,101 +632,83 @@
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label78" runat="server" Text="TotalHorasDerectivos"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox78" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox78" runat="server" CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender54" runat="server" TargetControlID="TextBox78" FilterType="Numbers" />
 
                                                 </td>
 
                                                 <td>
                                                     <asp:Label ID="Label79" runat="server" Text="TotalHorasProfecionales"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox79" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox79" runat="server"  CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender55" runat="server" TargetControlID="TextBox79" FilterType="Numbers" />
 
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label80" runat="server" Text="TotalHorasTecnicos"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox80" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox80" runat="server"  CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender56" runat="server" TargetControlID="TextBox80" FilterType="Numbers" />
 
                                                 </td>
-                                            </tr>
-                                            <tr>
+                                          
                                                 <td>
                                                     <asp:Label ID="Label81" runat="server" Text="TotalHorasApoyoAdmin"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox81" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox81" runat="server" CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender57" runat="server" TargetControlID="TextBox81" FilterType="Numbers" />
 
                                                 </td>
+                                                  </tr>
+                                            <tr>
                                                 <td>
                                                     <asp:Label ID="Label82" runat="server" Text="TotalHorasServicios"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox82" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox82" runat="server" CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender58" runat="server" TargetControlID="TextBox82" FilterType="Numbers" />
 
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label83" runat="server" Text="TotalHorasAgricultores"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox83" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox83" runat="server" CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender59" runat="server" TargetControlID="TextBox83" FilterType="Numbers" />
 
                                                 </td>
 
                                                 <td>
                                                     <asp:Label ID="Label84" runat="server" Text="TotalHorasOperarios"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox84" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox84" runat="server" CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender60" runat="server" TargetControlID="TextBox84" FilterType="Numbers" />
 
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label85" runat="server" Text="TotalHorasOperadores"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox85" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox85" runat="server" CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender61" runat="server" TargetControlID="TextBox85" FilterType="Numbers" />
 
                                                 </td>
-                                            </tr>
-                                            <tr>
+                                           
                                                 <td>
                                                     <asp:Label ID="Label86" runat="server" Text="TotalHorasOcupElementales"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox86" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox86" runat="server" CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender62" runat="server" TargetControlID="TextBox86" FilterType="Numbers" />
 
                                                 </td>
+                                                 </tr>
+                                            <tr>
                                                 <td>
                                                     <asp:Label ID="Label87" runat="server" Text="TotalHorasOrdinarias"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox87" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox87" runat="server" CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender63" runat="server" TargetControlID="TextBox87" FilterType="Numbers" />
 
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label88" runat="server" Text="TotalHorasExtra"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox88" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox88" runat="server" CssClass="horas"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender64" runat="server" TargetControlID="TextBox88" FilterType="Numbers" />
 
                                                 </td>
 
                                                 <td>
                                                     <asp:Label ID="Label89" runat="server" Text="TotalHoras"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox89" runat="server"></asp:TextBox><br />
+                                                    <asp:TextBox ID="TextBox89" runat="server" ReadOnly="true"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender65" runat="server" TargetControlID="TextBox89" FilterType="Numbers" />
-
-                                                </td>
-                                                <td>
-                                                    <asp:Label ID="Label90" runat="server" Text="TotalOutsourcing"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox90" runat="server"></asp:TextBox><br />
-                                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender66" runat="server" TargetControlID="TextBox90" FilterType="Numbers" />
-
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <asp:Label ID="Label91" runat="server" Text="TotalOutsourcingMujer"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox91" runat="server"></asp:TextBox><br />
-                                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender67" runat="server" TargetControlID="TextBox91" FilterType="Numbers" />
-
-                                                </td>
-                                                <td>
-                                                    <asp:Label ID="Label92" runat="server" Text="TotalOutsourcingHombre"></asp:Label><br />
-                                                    <asp:TextBox ID="TextBox92" runat="server"></asp:TextBox><br />
-                                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender68" runat="server" TargetControlID="TextBox92" FilterType="Numbers" />
 
                                                 </td>
                                                 <td>
@@ -722,6 +716,28 @@
                                                     <asp:TextBox ID="TextBox93" runat="server"></asp:TextBox><br />
                                                     <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender69" runat="server" TargetControlID="TextBox93" FilterType="Numbers" />
 
+                                                </td>
+                                           
+                                                <td>
+                                                    <asp:Label ID="Label91" runat="server" Text="TotalOutsourcingMujer"></asp:Label><br />
+                                                    <asp:TextBox ID="TextBox91" runat="server" CssClass="Costo2"></asp:TextBox><br />
+                                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender67" runat="server" TargetControlID="TextBox91" FilterType="Numbers" />
+
+                                                </td>
+                                                 </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:Label ID="Label92" runat="server" Text="TotalOutsourcingHombre"></asp:Label><br />
+                                                    <asp:TextBox ID="TextBox92" runat="server" CssClass="Costo2"></asp:TextBox><br />
+                                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender68" runat="server" TargetControlID="TextBox92" FilterType="Numbers" />
+
+                                                </td>
+                                                <td>
+                                                     <asp:Label ID="Label90" runat="server" Text="TotalOutsourcing"></asp:Label><br />
+                                                    <asp:TextBox ID="TextBox90" runat="server"></asp:TextBox><br />
+                                                    <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender66" runat="server" TargetControlID="TextBox90" FilterType="Numbers" />
+
+                                                   
                                                 </td>
 
                                             </tr>
@@ -738,7 +754,7 @@
                 <div style="height: 50px;">
                     <asp:Button ID="ButtonAgregar" runat="server" Text="Agregar" CssClass="boton" Style="float: right;" OnClick="ButtonAgregar_Click"  />
                     <asp:Button ID="ButtonModificar" runat="server" Text="Modificar" CssClass="boton" Style="float: right;" OnClick="ButtonModificar_Click" Visible="false" />
-                    <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="boton" Style="float: right;" OnClick="ButtonEliminar_Click" Visible="false" />
+                    <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" CssClass="boton" Style="float: right;" OnClick="ButtonEliminar_Click" OnClientClick="if ( !confirm('Seguro que quiere eliminar esta boleta?')) return false;"  Visible="false" />
                     <asp:Button ID="bt_Cancel" runat="server" Text="Cancelar" CssClass="boton" Style="float: right;" OnClick="bt_Cancel_Click" />
                 </div>
             </asp:Panel>
@@ -895,6 +911,47 @@
             });
 
 
+            $('.TotalCosto').keyup(function () {
+
+                var sum = 0;
+
+
+                $('.TotalCosto').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox76.ClientID %>').val(sum);
+
+            });
+            $('.Costo2').keyup(function () {
+
+                var sum = 0;
+
+
+                $('.Costo2').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox90.ClientID %>').val(sum);
+
+            });
+
+            
+            $('.horas').keyup(function () {
+
+                var sum = 0;
+
+
+                $('.horas').each(function () {
+                    sum += Number($(this).val());
+                });
+
+
+                $('#<%= TextBox89.ClientID %>').val(sum);
+
+              });
             $('#<%=ButtonAgregar.ClientID%>').click(function (e) {
 
                 var isValid = true;
@@ -925,10 +982,11 @@
 
                 });
 
-                if (isValid == false)
+                if (isValid == false) {
+
                     e.preventDefault();
-
-
+                    alert("Todavia faltan datos por llenar");
+                }
             });
 
 
