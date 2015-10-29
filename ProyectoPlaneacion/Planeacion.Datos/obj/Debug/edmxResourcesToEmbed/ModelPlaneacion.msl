@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HtBase2ModelStoreContainer" CdmEntityContainer="HtBase2Entities">
+    <EntitySetMapping Name="HtDetalleTotales">
+      <EntityTypeMapping TypeName="HtBase2Model.HtDetalleTotales">
+        <MappingFragment StoreEntitySet="HtDetalleTotales">
+          <ScalarProperty Name="HtConsecutivo" ColumnName="HtConsecutivo" />
+          <ScalarProperty Name="HtNumActividad" ColumnName="HtNumActividad" />
+          <ScalarProperty Name="HtIdMes" ColumnName="HtIdMes" />
+          <ScalarProperty Name="HtAngo" ColumnName="HtAngo" />
+          <ScalarProperty Name="HtNumLinea" ColumnName="HtNumLinea" />
+          <ScalarProperty Name="HtIdGrupoOcupacional" ColumnName="HtIdGrupoOcupacional" />
+          <ScalarProperty Name="HtNombre" ColumnName="HtNombre" />
+          <ScalarProperty Name="HtApellido" ColumnName="HtApellido" />
+          <ScalarProperty Name="HtCantidad" ColumnName="HtCantidad" />
+          <ScalarProperty Name="HtIdGenero" ColumnName="HtIdGenero" />
+          <ScalarProperty Name="HtIdTipoContrato" ColumnName="HtIdTipoContrato" />
+          <ScalarProperty Name="HtCedula" ColumnName="HtCedula" />
+          <ScalarProperty Name="HtIdRubro" ColumnName="HtIdRubro" />
+          <ScalarProperty Name="HtIdCamino" ColumnName="HtIdCamino" />
+          <ScalarProperty Name="HtObservaciones" ColumnName="HtObservaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HtGenero">
+      <EntityTypeMapping TypeName="HtBase2Model.HtGenero">
+        <MappingFragment StoreEntitySet="HtGenero">
+          <ScalarProperty Name="HtDescripGenero" ColumnName="HtDescripGenero" />
+          <ScalarProperty Name="HtIdGenero" ColumnName="HtIdGenero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HtGrupoOcupacional">
+      <EntityTypeMapping TypeName="HtBase2Model.HtGrupoOcupacional">
+        <MappingFragment StoreEntitySet="HtGrupoOcupacional">
+          <ScalarProperty Name="HtDescripGrupoOcupacional" ColumnName="HtDescripGrupoOcupacional" />
+          <ScalarProperty Name="HtIdGrupoOcupacional" ColumnName="HtIdGrupoOcupacional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HtRubro">
+      <EntityTypeMapping TypeName="HtBase2Model.HtRubro">
+        <MappingFragment StoreEntitySet="HtRubro">
+          <ScalarProperty Name="HtIdGrupo" ColumnName="HtIdGrupo" />
+          <ScalarProperty Name="HtDescripRubro" ColumnName="HtDescripRubro" />
+          <ScalarProperty Name="HtIdRubro" ColumnName="HtIdRubro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HtTipoContrato">
+      <EntityTypeMapping TypeName="HtBase2Model.HtTipoContrato">
+        <MappingFragment StoreEntitySet="HtTipoContrato">
+          <ScalarProperty Name="HtDescripTipoContrato" ColumnName="HtDescripTipoContrato" />
+          <ScalarProperty Name="HtIdContrato" ColumnName="HtIdContrato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

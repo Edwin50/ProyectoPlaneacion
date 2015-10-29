@@ -35,9 +35,9 @@ namespace Planeacion.Datos
                   }
               }
            
-              catch (Exception e)
+              catch (Exception ex)
               {
-                  throw;
+                  throw ex;
                  
               }
           }

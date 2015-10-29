@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0b5a0d05bdf046c2a46d76a92721548a" Name="Diagram1">
+        <EntityTypeShape EntityType="HtBase2Model.HtDetalleTotales" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HtBase2Model.HtGenero" Width="1.5" PointX="0.75" PointY="8.625" />
+        <EntityTypeShape EntityType="HtBase2Model.HtGrupoOcupacional" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="HtBase2Model.HtRubro" Width="1.5" PointX="0.75" PointY="10.875" />
+        <EntityTypeShape EntityType="HtBase2Model.HtTipoContrato" Width="1.5" PointX="0.75" PointY="13.5" />
+        <AssociationConnector Association="HtBase2Model.fk_DetalleTotal_Contrato" />
+        <AssociationConnector Association="HtBase2Model.fk_DetalleTotal_Genero" />
+        <AssociationConnector Association="HtBase2Model.fk_DetalleTotal_GrupoOcu" />
+        <AssociationConnector Association="HtBase2Model.fk_DetalleTotal_Rubro" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

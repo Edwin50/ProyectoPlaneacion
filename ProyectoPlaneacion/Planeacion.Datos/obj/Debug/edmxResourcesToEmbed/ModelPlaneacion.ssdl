@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HtBase2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HtDetalleTotales">
+    <Key>
+      <PropertyRef Name="HtConsecutivo" />
+      <PropertyRef Name="HtNumActividad" />
+      <PropertyRef Name="HtIdMes" />
+      <PropertyRef Name="HtAngo" />
+      <PropertyRef Name="HtNumLinea" />
+      <PropertyRef Name="HtIdCamino" />
+    </Key>
+    <Property Name="HtConsecutivo" Type="int" Nullable="false" />
+    <Property Name="HtNumActividad" Type="int" Nullable="false" />
+    <Property Name="HtIdMes" Type="int" Nullable="false" />
+    <Property Name="HtAngo" Type="int" Nullable="false" />
+    <Property Name="HtNumLinea" Type="int" Nullable="false" />
+    <Property Name="HtIdGrupoOcupacional" Type="int" />
+    <Property Name="HtNombre" Type="varchar" MaxLength="50" />
+    <Property Name="HtApellido" Type="varchar" MaxLength="50" />
+    <Property Name="HtCantidad" Type="int" />
+    <Property Name="HtIdGenero" Type="int" />
+    <Property Name="HtIdTipoContrato" Type="int" />
+    <Property Name="HtCedula" Type="varchar" MaxLength="20" />
+    <Property Name="HtIdRubro" Type="int" />
+    <Property Name="HtIdCamino" Type="int" Nullable="false" />
+    <Property Name="HtObservaciones" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="HtGenero">
+    <Key>
+      <PropertyRef Name="HtIdGenero" />
+    </Key>
+    <Property Name="HtIdGenero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HtDescripGenero" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HtGrupoOcupacional">
+    <Key>
+      <PropertyRef Name="HtIdGrupoOcupacional" />
+    </Key>
+    <Property Name="HtIdGrupoOcupacional" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HtDescripGrupoOcupacional" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HtRubro">
+    <Key>
+      <PropertyRef Name="HtIdRubro" />
+    </Key>
+    <Property Name="HtIdRubro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HtDescripRubro" Type="varchar" MaxLength="50" />
+    <Property Name="HtIdGrupo" Type="int" />
+  </EntityType>
+  <EntityType Name="HtTipoContrato">
+    <Key>
+      <PropertyRef Name="HtIdContrato" />
+    </Key>
+    <Property Name="HtIdContrato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HtDescripTipoContrato" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="fk_DetalleTotal_Contrato">
+    <End Role="HtTipoContrato" Type="Self.HtTipoContrato" Multiplicity="0..1" />
+    <End Role="HtDetalleTotales" Type="Self.HtDetalleTotales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HtTipoContrato">
+        <PropertyRef Name="HtIdContrato" />
+      </Principal>
+      <Dependent Role="HtDetalleTotales">
+        <PropertyRef Name="HtIdTipoContrato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetalleTotal_Genero">
+    <End Role="HtGenero" Type="Self.HtGenero" Multiplicity="0..1" />
+    <End Role="HtDetalleTotales" Type="Self.HtDetalleTotales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HtGenero">
+        <PropertyRef Name="HtIdGenero" />
+      </Principal>
+      <Dependent Role="HtDetalleTotales">
+        <PropertyRef Name="HtIdGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetalleTotal_GrupoOcu">
+    <End Role="HtGrupoOcupacional" Type="Self.HtGrupoOcupacional" Multiplicity="0..1" />
+    <End Role="HtDetalleTotales" Type="Self.HtDetalleTotales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HtGrupoOcupacional">
+        <PropertyRef Name="HtIdGrupoOcupacional" />
+      </Principal>
+      <Dependent Role="HtDetalleTotales">
+        <PropertyRef Name="HtIdGrupoOcupacional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetalleTotal_Rubro">
+    <End Role="HtRubro" Type="Self.HtRubro" Multiplicity="0..1" />
+    <End Role="HtDetalleTotales" Type="Self.HtDetalleTotales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HtRubro">
+        <PropertyRef Name="HtIdRubro" />
+      </Principal>
+      <Dependent Role="HtDetalleTotales">
+        <PropertyRef Name="HtIdRubro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HtBase2ModelStoreContainer">
+    <EntitySet Name="HtDetalleTotales" EntityType="Self.HtDetalleTotales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HtGenero" EntityType="Self.HtGenero" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HtGrupoOcupacional" EntityType="Self.HtGrupoOcupacional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HtRubro" EntityType="Self.HtRubro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HtTipoContrato" EntityType="Self.HtTipoContrato" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_DetalleTotal_Contrato" Association="Self.fk_DetalleTotal_Contrato">
+      <End Role="HtTipoContrato" EntitySet="HtTipoContrato" />
+      <End Role="HtDetalleTotales" EntitySet="HtDetalleTotales" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetalleTotal_Genero" Association="Self.fk_DetalleTotal_Genero">
+      <End Role="HtGenero" EntitySet="HtGenero" />
+      <End Role="HtDetalleTotales" EntitySet="HtDetalleTotales" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetalleTotal_GrupoOcu" Association="Self.fk_DetalleTotal_GrupoOcu">
+      <End Role="HtGrupoOcupacional" EntitySet="HtGrupoOcupacional" />
+      <End Role="HtDetalleTotales" EntitySet="HtDetalleTotales" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetalleTotal_Rubro" Association="Self.fk_DetalleTotal_Rubro">
+      <End Role="HtRubro" EntitySet="HtRubro" />
+      <End Role="HtDetalleTotales" EntitySet="HtDetalleTotales" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -63,7 +63,7 @@ namespace Planeacion.LogicaNegocio
           }
           catch (Exception ex) {
 
-              throw;
+              throw ex;
           }
       }
         public List<HtBoleta> ObtenerBoletasLN()

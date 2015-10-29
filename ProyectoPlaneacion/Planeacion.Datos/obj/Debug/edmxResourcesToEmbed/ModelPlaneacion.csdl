@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HtBase2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HtDetalleTotales">
+    <Key>
+      <PropertyRef Name="HtConsecutivo" />
+      <PropertyRef Name="HtNumActividad" />
+      <PropertyRef Name="HtIdMes" />
+      <PropertyRef Name="HtAngo" />
+      <PropertyRef Name="HtNumLinea" />
+      <PropertyRef Name="HtIdCamino" />
+    </Key>
+    <Property Name="HtConsecutivo" Type="Int32" Nullable="false" />
+    <Property Name="HtNumActividad" Type="Int32" Nullable="false" />
+    <Property Name="HtIdMes" Type="Int32" Nullable="false" />
+    <Property Name="HtAngo" Type="Int32" Nullable="false" />
+    <Property Name="HtNumLinea" Type="Int32" Nullable="false" />
+    <Property Name="HtIdGrupoOcupacional" Type="Int32" />
+    <Property Name="HtNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HtApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HtCantidad" Type="Int32" />
+    <Property Name="HtIdGenero" Type="Int32" />
+    <Property Name="HtIdTipoContrato" Type="Int32" />
+    <Property Name="HtCedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="HtIdRubro" Type="Int32" />
+    <Property Name="HtIdCamino" Type="Int32" Nullable="false" />
+    <Property Name="HtObservaciones" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HtTipoContrato" Relationship="HtBase2Model.fk_DetalleTotal_Contrato" FromRole="HtDetalleTotales" ToRole="HtTipoContrato" />
+    <NavigationProperty Name="HtGenero" Relationship="HtBase2Model.fk_DetalleTotal_Genero" FromRole="HtDetalleTotales" ToRole="HtGenero" />
+    <NavigationProperty Name="HtGrupoOcupacional" Relationship="HtBase2Model.fk_DetalleTotal_GrupoOcu" FromRole="HtDetalleTotales" ToRole="HtGrupoOcupacional" />
+    <NavigationProperty Name="HtRubro" Relationship="HtBase2Model.fk_DetalleTotal_Rubro" FromRole="HtDetalleTotales" ToRole="HtRubro" />
+  </EntityType>
+  <EntityContainer Name="HtBase2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HtDetalleTotales" EntityType="Self.HtDetalleTotales" />
+    <EntitySet Name="HtGenero" EntityType="HtBase2Model.HtGenero" />
+    <EntitySet Name="HtGrupoOcupacional" EntityType="HtBase2Model.HtGrupoOcupacional" />
+    <EntitySet Name="HtRubro" EntityType="HtBase2Model.HtRubro" />
+    <EntitySet Name="HtTipoContrato" EntityType="HtBase2Model.HtTipoContrato" />
+    <AssociationSet Name="fk_DetalleTotal_Contrato" Association="HtBase2Model.fk_DetalleTotal_Contrato">
+      <End Role="HtTipoContrato" EntitySet="HtTipoContrato" />
+      <End Role="HtDetalleTotales" EntitySet="HtDetalleTotales" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetalleTotal_Genero" Association="HtBase2Model.fk_DetalleTotal_Genero">
+      <End Role="HtGenero" EntitySet="HtGenero" />
+      <End Role="HtDetalleTotales" EntitySet="HtDetalleTotales" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetalleTotal_GrupoOcu" Association="HtBase2Model.fk_DetalleTotal_GrupoOcu">
+      <End Role="HtGrupoOcupacional" EntitySet="HtGrupoOcupacional" />
+      <End Role="HtDetalleTotales" EntitySet="HtDetalleTotales" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetalleTotal_Rubro" Association="HtBase2Model.fk_DetalleTotal_Rubro">
+      <End Role="HtRubro" EntitySet="HtRubro" />
+      <End Role="HtDetalleTotales" EntitySet="HtDetalleTotales" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="HtGenero">
+    <Key>
+      <PropertyRef Name="HtIdGenero" />
+    </Key>
+    <Property Name="HtIdGenero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HtDescripGenero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HtDetalleTotales" Relationship="HtBase2Model.fk_DetalleTotal_Genero" FromRole="HtGenero" ToRole="HtDetalleTotales" />
+  </EntityType>
+  <EntityType Name="HtGrupoOcupacional">
+    <Key>
+      <PropertyRef Name="HtIdGrupoOcupacional" />
+    </Key>
+    <Property Name="HtIdGrupoOcupacional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HtDescripGrupoOcupacional" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HtDetalleTotales" Relationship="HtBase2Model.fk_DetalleTotal_GrupoOcu" FromRole="HtGrupoOcupacional" ToRole="HtDetalleTotales" />
+  </EntityType>
+  <EntityType Name="HtRubro">
+    <Key>
+      <PropertyRef Name="HtIdRubro" />
+    </Key>
+    <Property Name="HtIdRubro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HtDescripRubro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HtIdGrupo" Type="Int32" />
+    <NavigationProperty Name="HtDetalleTotales" Relationship="HtBase2Model.fk_DetalleTotal_Rubro" FromRole="HtRubro" ToRole="HtDetalleTotales" />
+  </EntityType>
+  <EntityType Name="HtTipoContrato">
+    <Key>
+      <PropertyRef Name="HtIdContrato" />
+    </Key>
+    <Property Name="HtIdContrato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HtDescripTipoContrato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HtDetalleTotales" Relationship="HtBase2Model.fk_DetalleTotal_Contrato" FromRole="HtTipoContrato" ToRole="HtDetalleTotales" />
+  </EntityType>
+  <Association Name="fk_DetalleTotal_Contrato">
+    <End Type="HtBase2Model.HtTipoContrato" Role="HtTipoContrato" Multiplicity="0..1" />
+    <End Type="HtBase2Model.HtDetalleTotales" Role="HtDetalleTotales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HtTipoContrato">
+        <PropertyRef Name="HtIdContrato" />
+      </Principal>
+      <Dependent Role="HtDetalleTotales">
+        <PropertyRef Name="HtIdTipoContrato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetalleTotal_Genero">
+    <End Type="HtBase2Model.HtGenero" Role="HtGenero" Multiplicity="0..1" />
+    <End Type="HtBase2Model.HtDetalleTotales" Role="HtDetalleTotales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HtGenero">
+        <PropertyRef Name="HtIdGenero" />
+      </Principal>
+      <Dependent Role="HtDetalleTotales">
+        <PropertyRef Name="HtIdGenero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetalleTotal_GrupoOcu">
+    <End Type="HtBase2Model.HtGrupoOcupacional" Role="HtGrupoOcupacional" Multiplicity="0..1" />
+    <End Type="HtBase2Model.HtDetalleTotales" Role="HtDetalleTotales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HtGrupoOcupacional">
+        <PropertyRef Name="HtIdGrupoOcupacional" />
+      </Principal>
+      <Dependent Role="HtDetalleTotales">
+        <PropertyRef Name="HtIdGrupoOcupacional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetalleTotal_Rubro">
+    <End Type="HtBase2Model.HtRubro" Role="HtRubro" Multiplicity="0..1" />
+    <End Type="HtBase2Model.HtDetalleTotales" Role="HtDetalleTotales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HtRubro">
+        <PropertyRef Name="HtIdRubro" />
+      </Principal>
+      <Dependent Role="HtDetalleTotales">
+        <PropertyRef Name="HtIdRubro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

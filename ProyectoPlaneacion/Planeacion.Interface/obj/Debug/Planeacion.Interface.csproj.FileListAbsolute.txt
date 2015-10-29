@@ -4,10 +4,12 @@ C:\Users\edwin\onedrive\documentos\visual studio 2013\Projects\ProyectoPlaneacio
 C:\Users\edwin\onedrive\documentos\visual studio 2013\Projects\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.csprojResolveAssemblyReference.cache
 C:\Users\edwin\onedrive\documentos\visual studio 2013\Projects\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.dll
 C:\Users\edwin\onedrive\documentos\visual studio 2013\Projects\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.pdb
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.csprojResolveAssemblyReference.cache
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap-theme.css
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap-theme.min.css
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap.css
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap.min.css
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\styles.css
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\fonts\glyphicons-halflings-regular.svg
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap-theme.css.map
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\bootstrap.css.map
@@ -25,10 +27,10 @@ C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interfac
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Entidades.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.LogicaNegocio.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Datos.dll
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\EntityFramework.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Entidades.pdb
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.LogicaNegocio.pdb
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\Planeacion.Datos.pdb
-C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.csprojResolveAssemblyReference.cache
+C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\EntityFramework.xml
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.dll
 C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\obj\Debug\Planeacion.Interface.pdb
-C:\Users\edwin\OneDrive\Documentos\GitHub\ProyectoPlaneacion\Planeacion.Interface\bin\css\styles.css
