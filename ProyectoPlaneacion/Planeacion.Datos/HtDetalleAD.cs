@@ -8,12 +8,12 @@ using Planeacion.Entidades;
 namespace Planeacion.Datos
 {
     public class HtDetalleAD : IntHtDatos<HtDetalleTotales>
-
     {
         private HtBase2Entities contexto;
-        public HtDetalleAD(HtBase2Entities contexto) {
+        public HtDetalleAD(HtBase2Entities contexto)
+        {
             this.contexto = contexto;
-           
+
         }
 
 
@@ -22,37 +22,38 @@ namespace Planeacion.Datos
             try
             {
                 this.contexto.HtDetalleTotales.Add(value);
-                
+
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-           
+
         }
 
         public void eliminarAD(HtDetalleTotales value)
         {
             try
             {
-             var consulta   =  this.contexto.HtDetalleTotales.Where(det=> 
-                    det.HtAngo == value.HtAngo 
-                    && det.HtNumActividad == value.HtNumActividad 
-                    && det.HtIdMes == value.HtIdMes 
-                    && det.HtConsecutivo == value.HtConsecutivo 
-                    && det.HtNumLinea == value.HtNumLinea ).FirstOrDefault();
-              
-                if (consulta != null){
+                var consulta = this.contexto.HtDetalleTotales.Where(det =>
+                       det.HtAngo == value.HtAngo
+                       && det.HtNumActividad == value.HtNumActividad
+                       && det.HtIdMes == value.HtIdMes
+                       && det.HtConsecutivo == value.HtConsecutivo
+                       && det.HtNumLinea == value.HtNumLinea).FirstOrDefault();
+
+                if (consulta != null)
+                {
                     this.contexto.HtDetalleTotales.Remove(consulta);
-                
+
                 }
-                   
+
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            
+
         }
 
         public void modificarAD(HtDetalleTotales value)
@@ -65,7 +66,7 @@ namespace Planeacion.Datos
                     && det.HtIdMes == value.HtIdMes
                     && det.HtConsecutivo == value.HtConsecutivo
                     && det.HtNumLinea == value.HtNumLinea
-                    && det.HtIdCamino == value.HtIdCamino ).FirstOrDefault();
+                    && det.HtIdCamino == value.HtIdCamino).FirstOrDefault();
 
                 if (consulta != null)
                 {
@@ -87,7 +88,7 @@ namespace Planeacion.Datos
             {
                 throw ex;
             }
-            
+
         }
 
         public List<HtDetalleTotales> ObtenerDatos2AD()
@@ -100,37 +101,80 @@ namespace Planeacion.Datos
             {
                 throw ex;
             }
-            
+
         }
 
-        public HtDetalleTotales ObtenerValorAD( HtDetalleTotales value)
+        public HtDetalleTotales ObtenerValorAD(HtDetalleTotales value)
         {
             try
             {
- var consulta = this.contexto.HtDetalleTotales.Where(det =>
-                    det.HtAngo == value.HtAngo
-                    && det.HtNumActividad == value.HtNumActividad
-                    && det.HtIdMes == value.HtIdMes
-                    && det.HtConsecutivo == value.HtConsecutivo
-                    && det.HtNumLinea == value.HtNumLinea
-                    && det.HtIdCamino == value.HtIdCamino).FirstOrDefault();
+                var consulta = this.contexto.HtDetalleTotales.Where(det =>
+                                   det.HtAngo == value.HtAngo
+                                   && det.HtNumActividad == value.HtNumActividad
+                                   && det.HtIdMes == value.HtIdMes
+                                   && det.HtConsecutivo == value.HtConsecutivo
+                                   && det.HtNumLinea == value.HtNumLinea
+                                   && det.HtIdCamino == value.HtIdCamino).FirstOrDefault();
 
                 if (consulta != null)
                 {
 
                     return consulta;
-                   
+
 
                 }
                 return null;
-                   
+
             }
             catch (Exception ex)
             {
                 throw ex;
-                
+
             }
-            
+
+        }
+
+
+        public IEnumerable<object> ObtenerDetalles(int consecutivo, int actividad, int mes, int ango)
+        {
+            try
+            {
+                var lista = this.contexto.HtDetalleTotales.Where(det => det.HtConsecutivo == consecutivo &&
+                    det.HtNumActividad == actividad && det.HtIdMes == mes && det.HtAngo == ango)
+                    .Select(det => new
+                    {
+                        det.HtIdCamino,
+                        det.HtNumLinea,
+                        det.HtIdGrupoOcupacional,
+                        det.HtIdRubro,
+                        det.HtIdGenero,
+                        det.HtIdTipoContrato,
+                        det.HtCedula,
+                        det.HtNombre,
+                        det.HtApellido,
+                        det.HtCantidad,
+                        det.HtObservaciones
+                    });
+                return lista;
+            }
+
+            catch (Exception ex)
+            {
+                var message= ex.Message;
+                return null;
+            }
+
+        }
+
+
+        public List<HtDetalleTotales> ObtenerDatosAD()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<object> IntHtDatos<HtDetalleTotales>.ObtenerDatos2AD()
+        {
+            throw new NotImplementedException();
         }
     }
 }

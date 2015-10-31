@@ -24,9 +24,7 @@ namespace Planeacion.LogicaNegocio
         {
             detalleAD.agregarAD(value);
             this.contexto1.SaveChanges();
-
-
-            
+   
         }
 
         public void eliminarLN(HtDetalleTotales value)
@@ -50,6 +48,20 @@ namespace Planeacion.LogicaNegocio
         public HtDetalleTotales ObtenerValorLN(HtDetalleTotales value)
         {
             return this.detalleAD.ObtenerValorAD(value);
+        }
+
+        public IEnumerable<object> ObtenerDetalles(int consecutivo, int actividad, int mes, int ango)
+        {
+            try
+            {
+                return this.detalleAD.ObtenerDetalles(consecutivo,  actividad,  mes,  ango);
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
     }
 }

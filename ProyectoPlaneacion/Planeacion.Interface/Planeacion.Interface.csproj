@@ -41,7 +41,16 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\..\..\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportingServices.Interfaces, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -98,6 +107,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="HTReportesUI.aspx" />
+    <Content Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,6 +153,13 @@
     <Compile Include="HtDetalleBoletaUI.aspx.designer.cs">
       <DependentUpon>HtDetalleBoletaUI.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HTReportesUI.aspx.cs">
+      <DependentUpon>HTReportesUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HTReportesUI.aspx.designer.cs">
+      <DependentUpon>HTReportesUI.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PlaInicio.aspx.cs">
       <DependentUpon>PlaInicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,6 +173,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ReportCredentials.cs" />
     <Compile Include="UI.Master.cs">
       <DependentUpon>UI.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

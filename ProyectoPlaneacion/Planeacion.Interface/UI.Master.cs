@@ -11,10 +11,18 @@ namespace Planeacion.Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         #region "Propiedades"
+
+
+        public String TituloBarra {
+            get { return this.Page.Title; }
+            set { this.Page.Title = value; }
+        
+        }
+
         public String TituloLocal
         {
             get

@@ -22,9 +22,9 @@
             <div id='cssmenu'>
                 <ul>
                     <li class="active"><a href="HtBoletaUI.aspx">Mantenimiento de Boletas</a></li>
-                    <li><a href="#">Mantenimiento detalles de Boleta</a></li>
-                    <li><a href="#">Menu 2</a></li>
-                    <li><a href="#">Menu 3</a></li>
+                    <li><a href="HtDetalleBoletaUI.aspx">Mantenimiento detalles de Boleta</a></li>
+                    <li><a href="HTReportesUI.aspx">Reportes</a></li>
+                    <li><a href="#">Menu</a></li>
                 </ul>
             </div>
             <asp:Label ID="Label1" runat="server" Text="Titulo Pagina" Style="font-size: xx-large; font-weight: 700; color: #3071B8; margin-left: 10%;"></asp:Label>

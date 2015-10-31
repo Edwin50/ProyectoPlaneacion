@@ -37,10 +37,13 @@ namespace Planeacion.Datos
         public IEnumerable<object> ObtenerDatos2AD()
         {
 
-            try { var lista = this.contexto.HtRubro.Select(ru => new { ru.HtIdRubro, ru.HtDescripRubro });
+            try {
+                var lista = this.contexto.HtRubro.Select(ru => new { ru.HtIdRubro, ru.HtDescripRubro });
             return lista;
             }
-            catch (Exception) {  throw new NotImplementedException();
+            catch (Exception)
+            {
+                return null; throw new NotImplementedException();
             }
            
         }

@@ -17,7 +17,7 @@ namespace Planeacion.LogicaNegocio
            grupo = new HtGrupoAD(contexto);
        
        }
-        public IEnumerable<Object> ObtenerDatos2AD()
+        public IEnumerable<Object> ObtenerDatos2LN()
        {
            return grupo.ObtenerDatos2AD();
        }

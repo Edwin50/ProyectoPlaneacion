@@ -45,11 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConvertLN.cs" />
     <Compile Include="DatosGeneralesLN.cs" />
     <Compile Include="HtBoletaLN.cs" />
+    <Compile Include="HtContratoLN.cs" />
     <Compile Include="HtDetalleLN.cs" />
     <Compile Include="HtEmpleadoLN.cs" />
+    <Compile Include="HtGeneroLN.cs" />
     <Compile Include="HtGrupoLN.cs" />
+    <Compile Include="HtRubroLN.cs" />
     <Compile Include="IntLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

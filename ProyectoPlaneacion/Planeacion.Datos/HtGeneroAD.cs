@@ -38,7 +38,14 @@ namespace Planeacion.Datos
 
         public IEnumerable<object> ObtenerDatos2AD()
         {
-
+            try
+            {
+                var lista = this.contexto.HtGenero.Select(gen => new { gen.HtIdGenero, gen.HtDescripGenero });
+                return lista;
+            }
+            catch (Exception) {
+                return null;
+            }
             throw new NotImplementedException();
         }
 

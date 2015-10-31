@@ -40,6 +40,7 @@ namespace Planeacion.Interface
                 }
                 // Cargar el dataset de las boletas
                 this.Master.TituloLocal = "Mantenimiento de Boletas";
+                this.Master.TituloBarra = "Mantenimiento de Boletas";
             }
             catch (Exception ex)
             {
@@ -349,11 +350,16 @@ namespace Planeacion.Interface
         {
             try
             {
-
+                HtDetalleLN det = new HtDetalleLN();
                 HtBoleta lBoleta = new HtBoleta();
                 lBoleta = lpllenarBoleta(lBoleta);
-                gHtBoletaLN.RUDBoletasLN(lBoleta, 3);
-                this.Master.lpMensaje(this, "Boleta Eliminada");
+              int contador=  det.ObtenerDetalles(lBoleta.HtConsecutivo,lBoleta.HtNumActividad,lBoleta.HtIdMes,lBoleta.HtAngo).ToList().Count;
+              if (contador == 0)
+              {
+                  gHtBoletaLN.RUDBoletasLN(lBoleta, 3);
+                  this.Master.lpMensaje(this, "Boleta Eliminada");
+              }
+              else { this.Master.lpMensaje(this, "No se pueden eliminar Boletas ue contengan detalles"); }
             }
             catch (Exception ex)
             {

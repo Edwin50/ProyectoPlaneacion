@@ -44,6 +44,7 @@ namespace Planeacion.Datos
             }
             catch (Exception)
             {
+                return null;
                 throw new NotImplementedException();
             }
         }

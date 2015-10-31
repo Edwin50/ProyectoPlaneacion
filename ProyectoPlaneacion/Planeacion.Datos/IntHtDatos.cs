@@ -14,7 +14,7 @@ namespace Planeacion.Datos
         void eliminarAD(T value);
         void modificarAD(T value);
         List<T> ObtenerDatosAD();
-        IEnumerable<Object> ObtenerDatos2AD();
+        IEnumerable<object> ObtenerDatos2AD();
         T ObtenerValorAD(T value);
 
     }
