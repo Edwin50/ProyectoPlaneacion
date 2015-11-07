@@ -10,6 +10,10 @@
   <DataSets />
   <Reports>
     <ProjectItem>
+      <Name>ReporteCantidad.rdl</Name>
+      <FullPath>ReporteCantidad.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>ReporteEntrevistados.rdl</Name>
       <FullPath>ReporteEntrevistados.rdl</FullPath>
     </ProjectItem>
@@ -20,6 +24,14 @@
     <ProjectItem>
       <Name>ReporteResultados.rdl</Name>
       <FullPath>ReporteResultados.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ReportOutSour.rdl</Name>
+      <FullPath>ReportOutSour.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>ReportRangoHoras.rdl</Name>
+      <FullPath>ReportRangoHoras.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

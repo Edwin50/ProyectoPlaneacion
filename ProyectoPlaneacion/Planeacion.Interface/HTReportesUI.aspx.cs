@@ -19,6 +19,9 @@ namespace Planeacion.Interface
                 DropDownListReport.Items.Add(new ListItem("Fechas", "ReportePorFechas"));
                 DropDownListReport.Items.Add(new ListItem("Entrevistas", "ReporteEntrevistados"));
                 DropDownListReport.Items.Add(new ListItem("Resultados", "ReporteResultados"));
+                DropDownListReport.Items.Add(new ListItem("Cantidad Empleados", "ReporteCantidad"));
+                DropDownListReport.Items.Add(new ListItem("Empresas Apoyadas por Outsourcing", "ReportOutSour"));
+                DropDownListReport.Items.Add(new ListItem("Rango de Duracion de entrevistas", "ReportRangoHoras"));
                 DropDownListReport.SelectedIndex = 0;
                 lpCargarReportes(DropDownListReport.SelectedValue);
             }
